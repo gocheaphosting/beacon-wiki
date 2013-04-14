@@ -29,7 +29,7 @@ broadcast 192.168.1.255
 gateway 192.168.1.1
 
 
--Now add in the DNS settings by editing the resolv.conf file:
+- Now add in the DNS settings by editing the resolv.conf file:
 
 sudo vi /etc/resolv.conf
 
@@ -38,7 +38,7 @@ sudo vi /etc/resolv.conf
 sudo apt-get remove dhcp-client
 sudo apt-get remove dhcp-client3
 
--restart the networking service
+- restart the networking service
 sudo /etc/init.d/networking restart
 
 
