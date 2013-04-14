@@ -22,11 +22,17 @@ iface eth0 inet dhcp
 change the lines to as below
 
 auto eth0
+
 iface eth0 inet static
+
 address 192.168.1.100
+
 netmask 255.255.255.0
+
 network 192.168.1.0
+
 broadcast 192.168.1.255
+
 gateway 192.168.1.1
 
 
