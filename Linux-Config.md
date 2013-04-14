@@ -16,6 +16,7 @@
 For the primary interface, which is usually eth0, you will see these lines:
 
 auto eth0
+
 iface eth0 inet dhcp
 
 change the lines to as below
