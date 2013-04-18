@@ -52,7 +52,7 @@ to
 
 - psql -U postgres
 - create user rubycas password 'rubycas';
-- need to find a way to give read-only access to the beacon_production.users table.
+- **need to find a way to give read-only access to the beacon_production.users table.**
 - \q
 
 
