@@ -23,7 +23,7 @@ to
 
 - restart the postgresql
 
-# sudo /etc/init.d/postgresql restart
+- sudo /etc/init.d/postgresql restart
 
 # test the postgresql connection 
 
