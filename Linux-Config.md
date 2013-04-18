@@ -7,6 +7,8 @@
 
   - update thehostname in /etc/hosts if it's there
 
+  - sudo vi /etc/hosts
+
 - sudo service hostname start 
 
 ## Change Ubuntu Server from DHCP to a Static IP Address
@@ -47,7 +49,6 @@ sudo apt-get remove dhcp-client3
 
 - restart the networking service
 sudo /etc/init.d/networking restart
-
 
 
 
