@@ -1,12 +1,11 @@
 ## Postgresql Install
 
-sudo apt-get install postgresql-9.1
+# sudo apt-get install postgresql-9.1
 
 ## Change the user authentication method
 
-- sudo vi /etc/postgresql/9.1/main/pg_hba.conf
+# sudo vi /etc/postgresql/9.1/main/pg_hba.conf
 
-#change 
  - local      all     postgres     peer 
 to
  - local      all     postgres     trust
@@ -17,15 +16,14 @@ to
 
  - listen_addresses = 'localhost' 
 to
-
  - listen_addresses = '*' 
 
 # restart the postgresql
 
-- sudo /etc/init.d/postgresql restart
+# sudo /etc/init.d/postgresql restart
 
 # test the postgresql connection 
 
-- psql -U postgres
+# psql -U postgres
 
 
