@@ -10,6 +10,9 @@
 to
  - local      all     postgres     trust
 
+# provide access to the db from the computers in the sub-net
+ - host all all 192.168.1.0/24 trust
+
 ## Change the Postgres to listn for network connections
 
 -change the Connection Settings 
@@ -51,7 +54,6 @@ to
 - create user rubycas password 'rubycas';
 - need to find a way to give read-only access to the beacon_production.users table.
 - \q
-
 
 
 
