@@ -4,7 +4,7 @@
 
 ## Change the user authentication method
 
-# sudo vi /etc/postgresql/9.1/main/pg_hba.conf
+- sudo vi /etc/postgresql/9.1/main/pg_hba.conf
 
  - local      all     postgres     peer 
 to
@@ -18,12 +18,12 @@ to
 to
  - listen_addresses = '*' 
 
-# restart the postgresql
+- restart the postgresql
 
 # sudo /etc/init.d/postgresql restart
 
 # test the postgresql connection 
 
-# psql -U postgres
+- psql -U postgres
 
 
