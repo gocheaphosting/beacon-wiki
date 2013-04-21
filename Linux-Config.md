@@ -42,6 +42,9 @@ gateway 192.168.1.1
 
 sudo vi /etc/resolv.conf
 
+nameserver 192.168.1.1
+nameserver 8.8.8.8
+
 - now remove the dhcp client or might need to remove dhcp-client3 instead
 
 sudo apt-get remove dhcp-client
