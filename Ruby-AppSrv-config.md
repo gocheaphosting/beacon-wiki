@@ -7,4 +7,6 @@ apt-get install postgresql-client
 
  apt-get install zlib1g-dev libxml2-dev libmysqlclient-dev libxslt1-dev   imagemagick libpq-dev nodejs libxmlsec1-dev libcurl4-gnutls-dev   libxmlsec1 build-essential
 
--[Install-Oracle-JDK-on-Linux](https://github.com/m-narayan/beacon/wiki/Install-Oracle-JDK-on-Linux)
+-  Java Install 
+-Avoid using open-jdk for stability
+[Install-Oracle-JDK-on-Linux](https://github.com/m-narayan/beacon/wiki/Install-Oracle-JDK-on-Linux)
