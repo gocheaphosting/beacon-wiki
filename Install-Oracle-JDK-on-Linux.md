@@ -11,11 +11,17 @@ sudo vi /etc/profile
 -Add the following lines at the end of file:
 
 JAVA_HOME=/usr/local/java/jdk*
+
 PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
 JRE_HOME=/usr/local/java/jre*
+
 PATH=$PATH:$HOME/bin:$JRE_HOME/bin
+
 export JAVA_HOME
+
 export JRE_HOME
+
 export PATH
 
 - Now enter following commands one by one in terminal:
