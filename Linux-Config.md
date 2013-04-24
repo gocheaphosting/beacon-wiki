@@ -40,10 +40,17 @@ gateway 192.168.1.1
 
 - Now add in the DNS settings by editing the resolv.conf file:
 
-sudo vi /etc/resolv.conf
+ - To add more entries to /etc/resolv.conf, create a /etc/resolvconf/resolv.conf.d/base and add them there.
+
+sudo vi /etc/resolvconf/resolv.conf.d/base
 
 nameserver 192.168.1.1
 nameserver 8.8.8.8
+
+- now tell resolvconf to regenerate resolv.conf.
+
+sudo resolvconf -u
+
 
 - now remove the dhcp client or might need to remove dhcp-client3 instead
 
@@ -52,7 +59,6 @@ sudo apt-get remove dhcp-client3
 
 - restart the networking service
 sudo /etc/init.d/networking restart
-
 
 
 
