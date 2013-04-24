@@ -20,15 +20,21 @@ export PATH
 
 - Now enter following commands one by one in terminal:
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jre1.7.0_21/bin/java" 1
+
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk1.7.0_21/bin/javac" 1
+
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jre1.7.0_21/bin/javaws" 1
+
 sudo update-alternatives --set java /usr/local/java/jre1.7.0_21/bin/java
+
 sudo update-alternatives --set javac /usr/local/java/jdk1.7.0_21/bin/javac
+
 sudo update-alternatives --set javaws /usr/local/java/jre1.7.0_21/bin/javaws
+
 . /etc/profile
 
 -Create a Mozilla plugins folder in your home directory.
 
 mkdir ~/.mozilla/plugins/
 
-ln -s /usr/lib/jvm/jdk1.7.0/jre/lib/amd64/libnpjp2.so ~/.mozilla/plugins/
+ln -s /usr/local/java/jre1.7.0_21/lib/amd64/libnpjp2.so ~/.mozilla/plugins/
