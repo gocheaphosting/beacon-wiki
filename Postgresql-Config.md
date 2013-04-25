@@ -2,6 +2,11 @@
 
 # sudo apt-get install postgresql-9.1
 
+## Install postgresql-contrib packages
+
+# sudo apt-get install postgresql-contrib
+
+
 ## Change the user authentication method
 
 - sudo vi /etc/postgresql/9.1/main/pg_hba.conf
@@ -54,6 +59,5 @@ to
 - create user rubycas password 'rubycas';
 - **need to find a way to give read-only access to the beacon_production.users table.**
 - \q
-
 
 
