@@ -61,7 +61,9 @@ In many notification emails, and other events that aren't triggered by a web req
 
     sysadmin@appserver:/var/canvas$ bundle exec rake canvas:compile_assets
 
-## Making sure Canvas can't write to more things than it should
+## Canvas ownership
+
+### Making sure Canvas can't write to more things than it should
 
     sysadmin@appserver:~$ cd /var/canvas
     sysadmin@appserver:/var/canvas$ sudo adduser --disabled-password --gecos canvas canvasuser
