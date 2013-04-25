@@ -32,11 +32,12 @@ to
 # test the postgresql connection 
 
  `psql -U postgres`
+
  `\q`
 
 ## Create user and databases for canvas
 
-psql -U postgres
+# psql -U postgres
 create user canvas password 'canvas';
 CREATE DATABASE canvas_production ENCODING 'UTF8' OWNER canvas;
 CREATE DATABASE canvas_queue_production ENCODING 'UTF8' OWNER canvas;
