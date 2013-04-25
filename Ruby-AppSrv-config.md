@@ -27,3 +27,15 @@ cd ruby-1.9.3-p392
 ./configure  
 make  
 make install 
+
+**Configure Gem not to install RI and RDoc **
+
+- Add the following two lines to /etc/gemrc
+
+install: --no-rdoc --no-ri 
+update:  --no-rdoc --no-ri
+
+
+**Install Bundler**
+
+gem install bundler
