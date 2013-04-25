@@ -60,3 +60,12 @@ In many notification emails, and other events that aren't triggered by a web req
 ## File Generation
 
     sysadmin@appserver:/var/canvas$ bundle exec rake canvas:compile_assets
+
+### Making sure Canvas can't write to more things than it should.
+
+    sysadmin@appserver:~$ cd /var/canvas
+    sysadmin@appserver:/var/canvas$ sudo adduser --disabled-password --gecos canvas canvasuser
+    sysadmin@appserver:/var/canvas$ sudo mkdir -p log tmp/pids public/assets public/stylesheets/compiled
+    sysadmin@appserver:/var/canvas$ sudo touch Gemfile.lock
+    sysadmin@appserver:/var/canvas$ sudo chown -R canvasuser config/environment.rb log tmp public/assets \
+                                      public/stylesheets/compiled Gemfile.lock config.ru
