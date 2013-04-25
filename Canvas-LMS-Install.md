@@ -52,3 +52,11 @@ Find the **production** section and configure it to match your SMTP provider's s
 In many notification emails, and other events that aren't triggered by a web request, Canvas needs to know the URL that it is visible from. For now, these are all constructed based off a domain name. Please edit the **production** section of *config/domain.yml* to be the appropriate domain name for your Canvas installation. For the *domain* field, this will be the part between `http://` and the next `/`. Instructure uses *canvas.instructure.com*.
 
     sysadmin@appserver:/var/canvas$ nano config/domain.yml
+
+## Database population
+
+    sysadmin@appserver:/var/canvas$ RAILS_ENV=production bundle exec rake db:initial_setup
+
+## File Generation
+
+    sysadmin@appserver:/var/canvas$ bundle exec rake canvas:compile_assets
