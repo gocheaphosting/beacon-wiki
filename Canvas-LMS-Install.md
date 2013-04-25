@@ -71,3 +71,12 @@ In many notification emails, and other events that aren't triggered by a web req
     sysadmin@appserver:/var/canvas$ sudo touch Gemfile.lock
     sysadmin@appserver:/var/canvas$ sudo chown -R canvasuser config/environment.rb log tmp public/assets \
                                       public/stylesheets/compiled Gemfile.lock config.ru
+
+### Making sure other users can't read private Canvas files
+
+There are a number of files in your configuration directory (`/var/canvas/config`) that contain passwords, encryption keys, and other private data that would compromise the security of your Canvas installation if it became public. These are the *.yml* files inside the *config* directory, and we want to make them readable only by the *canvasuser* user.
+
+```
+sysadmin@appserver:/var/canvas$ sudo chown canvasuser config/*.yml
+sysadmin@appserver:/var/canvas$ sudo chmod 400 config/*.yml
+```
