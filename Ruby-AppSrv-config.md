@@ -28,7 +28,7 @@ cd ruby-1.9.3-p392
 make  
 make install 
 
-**Configure Gem not to install RI and RDoc **
+** Configure Gem not to install RI and RDoc **
 
 - Add the following two lines to /etc/gemrc
 
