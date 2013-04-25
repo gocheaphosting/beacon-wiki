@@ -72,3 +72,6 @@ create user rubycas password 'rubycas';
 
 \q
 
+## remove a PG database
+
+psql -U postgres -c "drop database canvas_queue_production"
