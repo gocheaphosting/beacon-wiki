@@ -1,3 +1,5 @@
+- Download Oracle JDK tar file jdk-7u21-linux-x64.tar.gz from the URL http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
 sudo mkdir -p /usr/local/java
 
 tar -xvf jdk-7u21-linux-x64.tar.gz
