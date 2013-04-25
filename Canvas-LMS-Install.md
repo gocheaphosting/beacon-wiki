@@ -22,3 +22,9 @@ We need to put the Canvas code in the location where it will run from.
     config  doc  lib      public  script    test  vendor
     sysadmin@appserver:/var/canvas$
 
+## Canvas default configuration
+------
+
+    sysadmin@appserver:/var/canvas$ for config in amazon_s3 database \
+      delayed_jobs domain file_store outgoing_mail security external_migration
+    do cp config/$config.yml.example config/$config.yml; done
