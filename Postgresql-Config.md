@@ -2,15 +2,13 @@
 
 `sudo apt-get install postgresql-9.1`
 
-
-
 ## Install postgresql-contrib packages
 
-sudo apt-get install postgresql-contrib
+`sudo apt-get install postgresql-contrib`
 
 ## Change the user authentication method
 
- sudo vi /etc/postgresql/9.1/main/pg_hba.conf
+ `sudo vi /etc/postgresql/9.1/main/pg_hba.conf`
 
  - local      all     postgres     peer 
 to
@@ -29,12 +27,12 @@ to
 
 - restart the postgresql
 
- sudo /etc/init.d/postgresql restart
+ `sudo /etc/init.d/postgresql restart`
 
 # test the postgresql connection 
 
- psql -U postgres
- \q
+ `psql -U postgres
+ \q`
 
 ## Create user and databases for canvas
 
