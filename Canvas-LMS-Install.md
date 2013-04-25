@@ -80,3 +80,23 @@ There are a number of files in your configuration directory (`/var/canvas/config
 sysadmin@appserver:/var/canvas$ sudo chown canvasuser config/*.yml
 sysadmin@appserver:/var/canvas$ sudo chmod 400 config/*.yml
 ```
+
+## Nginx configuration
+
+`
+`sysadmin@appserver:/var/canvas$ cd /opt/nginx
+sysadmin@appserver:/opt/nginx$ sudo mkdir ssl
+sysadmin@appserver:/opt/nginx$ sudo mkdir sites-available
+sysadmin@appserver:/opt/nginx$ sudo mkdir sites-enabled
+
+
+### passenger.conf file 
+
+```
+sysadmin@appserver:/opt/nginx$ cd /opt/nginx/conf
+sysadmin@appserver:/opt/nginx/conf$ sudo vi passenger.conf
+
+```
+
+
+## Cache configuration
