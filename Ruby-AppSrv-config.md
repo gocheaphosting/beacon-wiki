@@ -1,3 +1,7 @@
+** Install git **
+
+sudo apt-get install git-core
+
 **- Install postgres client**
 
 apt-get install postgresql-client
