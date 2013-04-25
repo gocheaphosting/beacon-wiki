@@ -31,8 +31,8 @@ to
 
 # test the postgresql connection 
 
- `psql -U postgres
- \q`
+ `psql -U postgres`
+ `\q`
 
 ## Create user and databases for canvas
 
