@@ -39,3 +39,41 @@ update:  --no-rdoc --no-ri
 **Install Bundler**
 
 gem install bundler
+
+
+**Install Nginx with Passenger**
+
+**Install Passenger gem **
+
+Note : - We need to install passenger 4.0 and currently it is a release candidate 6. 
+
+-To get the RC package run the command 
+
+gem install passenger --pre
+
+-Once this gem is released fully , we have to run the following command
+
+gem install passenger 
+
+- Now install Nginx to work with Passenger
+
+_Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the PPA._
+
+passenger-install-nginx-module
+
+# Choose "download, compile, and install Nginx for me"
+# Accept defaults for any other questions it asks
+
+
+**setup a script to control Nginx**
+
+- We’re going to grab the script from Linode:
+
+wget -O init-deb.sh http://library.linode.com/assets/660-init-deb.sh
+
+sudo mv init-deb.sh /etc/init.d/nginx
+
+sudo chmod +x /etc/init.d/nginx
+
+sudo /usr/sbin/update-rc.d -f nginx defaults
+
