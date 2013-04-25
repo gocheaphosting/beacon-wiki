@@ -22,6 +22,12 @@ We need to put the Canvas code in the location where it will run from.
     config  doc  lib      public  script    test  vendor
     sysadmin@appserver:/var/canvas$
 
+
+## Bundler and Canvas dependencies
+
+    sysadmin@appserver:/var/canvas$ sudo gem install bundler
+    sysadmin@appserver:/var/canvas$ bundle install --path vendor/bundle --without=sqlite
+
 ## Canvas default configuration
 
     sysadmin@appserver:/var/canvas$ for config in amazon_s3 database \
@@ -46,4 +52,3 @@ Find the **production** section and configure it to match your SMTP provider's s
 In many notification emails, and other events that aren't triggered by a web request, Canvas needs to know the URL that it is visible from. For now, these are all constructed based off a domain name. Please edit the **production** section of *config/domain.yml* to be the appropriate domain name for your Canvas installation. For the *domain* field, this will be the part between `http://` and the next `/`. Instructure uses *canvas.instructure.com*.
 
     sysadmin@appserver:/var/canvas$ nano config/domain.yml
-
