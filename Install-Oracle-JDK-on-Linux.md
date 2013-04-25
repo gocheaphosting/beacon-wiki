@@ -10,7 +10,7 @@ cd /usr/local/java
 
 sudo vi /etc/profile
 
--Add the following lines at the end of file:
+- Add the following lines at the end of file:
 
 JAVA_HOME=/usr/local/java/jdk*
 
