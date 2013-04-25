@@ -27,3 +27,9 @@ We need to put the Canvas code in the location where it will run from.
     sysadmin@appserver:/var/canvas$ for config in amazon_s3 database \
       delayed_jobs domain file_store outgoing_mail security external_migration
     do cp config/$config.yml.example config/$config.yml; done
+
+## Database configuration
+
+    sysadmin@appserver:/var/canvas$ vi config/database.yml
+
+Update this section to reflect your Postgres server's location and authentication credentials. 
