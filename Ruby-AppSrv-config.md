@@ -40,6 +40,9 @@ update:  --no-rdoc --no-ri
 
 gem install bundler
 
+**Install rake**
+
+gem install rake
 
 **Install Nginx with Passenger**
 
@@ -86,3 +89,8 @@ sudo /etc/init.d/nginx start
 **how to configure a Nginx server **
 
 Edit the file /opt/nginx/conf/nginx.conf 
+
+
+**Verifying that Passenger is running**
+
+passenger-memory-stats
