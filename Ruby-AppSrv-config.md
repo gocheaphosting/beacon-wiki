@@ -77,3 +77,12 @@ sudo chmod +x /etc/init.d/nginx
 
 sudo /usr/sbin/update-rc.d -f nginx defaults
 
+- now We can control Nginx with this script. To start and stop the server manually, run:
+
+sudo /etc/init.d/nginx stop
+
+sudo /etc/init.d/nginx start
+
+**how to configure a Nginx server **
+
+Edit the file /opt/nginx/conf/nginx.conf 
