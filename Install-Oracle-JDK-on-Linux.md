@@ -41,7 +41,7 @@ sudo update-alternatives --set javaws /usr/local/java/jre1.7.0_21/bin/javaws
 
 . /etc/profile
 
--Create a Mozilla plugins folder in your home directory.
+- Create a Mozilla plugins folder in your home directory.
 
 mkdir ~/.mozilla/plugins/
 
