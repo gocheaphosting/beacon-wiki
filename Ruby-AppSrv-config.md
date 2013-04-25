@@ -12,9 +12,7 @@ apt-get install build-essential libreadline6 libreadline6-dev zlib1g libssl-dev 
 
 **-  Java Install **
 
--Avoid using open-jdk for stability
-
-[Install-Oracle-JDK-on-Linux](https://github.com/m-narayan/beacon/wiki/Install-Oracle-JDK-on-Linux)
+-Avoid using open-jdk for stability [Install-Oracle-JDK-on-Linux](https://github.com/m-narayan/beacon/wiki/Install-Oracle-JDK-on-Linux)
 
 **- Get the ruby source tar file**
 
