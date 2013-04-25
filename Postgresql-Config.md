@@ -1,11 +1,12 @@
 ## Postgresql Install
 
-sudo apt-get install postgresql-9.1
+`sudo apt-get install postgresql-9.1`
+
+
 
 ## Install postgresql-contrib packages
 
 sudo apt-get install postgresql-contrib
-
 
 ## Change the user authentication method
 
