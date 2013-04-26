@@ -35,6 +35,16 @@ to
 
  `\q`
 
+
+## Install the adminpack
+
+Try locate adminpack. But first, run `updatedb` to make sure the locate database is up to date.
+
+````
+sudo updatedb
+locate adminpack
+```
+
 ## Create user and databases for canvas
 
 psql -U postgres
