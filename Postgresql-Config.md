@@ -51,6 +51,11 @@ The output is:
 /usr/share/postgresql/9.1/extension/adminpack--1.0.sql
 /usr/share/postgresql/9.1/extension/adminpack.control
 ````
+In PostgreSQL 9.1 and later, extensions can be installed via the CREATE EXTENSION command:
+
+sudo -u postgres psql
+CREATE EXTENSION "adminpack";
+
 
 ## Create user and databases for canvas
 
