@@ -53,9 +53,10 @@ The output is:
 ````
 In PostgreSQL 9.1 and later, extensions can be installed via the CREATE EXTENSION command:
 
+```
 sudo -u postgres psql
 CREATE EXTENSION "adminpack";
-
+```
 
 ## Create user and databases for canvas
 
