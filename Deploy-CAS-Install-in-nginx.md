@@ -47,19 +47,18 @@ database:
   adapter: postgresql
   database: casserver_production
   username: rubycas
-  password: rubycas
-  host: 192.168.1.51
+  password: xxxxxxx
+  host: xxx.xxx.xxx.xxx
   reconnect: true
 
 authenticator:
   - class: CASServer::Authenticators::SQL
     database:
-      adapter: postgresql
-      #database: casserver_production
+      adapter: postgresql     
       database: beacon_production
       username: rubycas
-      password: rubycas
-      host: 192.168.1.51
+      password: xxxxxxx
+      host: xxx.xxx.xxx.xxx
     user_table: users
     username_column: email
     password_column: encrypted_password
@@ -72,7 +71,15 @@ organization: ArrivuSystems
 
 log:
   file: log/casserver.log
+  level: DEBUG
 
+db_log:
+  file: log/casserver_db.log
+  level: DEBUG
+
+downcase_username: true
+
+enable_single_sign_out: true
 ```
 
 # configure nginx and passenger for cas
