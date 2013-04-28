@@ -12,7 +12,6 @@ sysadmin@appserver:~/projects/beacon$ cd /var/canvas
 # Bundle and beacon dependencies
 
 ```
-sysadmin@appserver:/var/beacon$ sudo gem install bundler
 sysadmin@appserver:/var/beacon$ bundle install --path vendor/bundle --without=sqlite
 ```
 
@@ -40,7 +39,7 @@ sysadmin@appserver:/var/beacon$bundle exec rake assets:precompile
 # configure nginx and passenger for beacon
 ```
 sysadmin@appserver:/var/beacon$ cd /opt/nginx/sites-available
-sysadmin@appserver:/opt/nginx/sites-available$ vi beacon 
+sysadmin@appserver:/opt/nginx/sites-available$ sudo vi beacon 
 ```
 
 add the following line to the file to redirect plain http request url to secure https url
@@ -76,9 +75,57 @@ server  {
 
 ```
 
-
-
 # Configure ssl for nginx
 
+create the server private key, you'll be asked for a passphrase: enter the passphrase as 'arrivu'
 
+```
+sysadmin@appserver:/opt/nginx/sites-available$ cd /opt/nginx/ssl
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl genrsa -des3 -out beacon_cert_nginx.key 1024
+```
+
+Create the Certificate Signing Request (CSR):
+
+```
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl req -new -key beacon_cert_nginx.key -out beacon_cert_nginx.csr
+```
+
+This will as lot of questions and enter the server name as ** beacon.arrivu.corecloud.com **
+
+Remove the necessity of entering a passphrase for starting up nginx with SSL using the above private key:
+
+```
+sysadmin@appserver:/opt/nginx/ssl$ sudo cp beacon_cert_nginx.key beacon_cert_nginx.key.org
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl rsa -in beacon_cert_nginx.key.org -out beacon_cert_nginx.key
+```
+
+Finally sign the certificate using the above private key and CSR:
+
+```
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl x509 -req -days 365 -in beacon_cert_nginx.csr -signkey beacon_cert_nginx.key -out beacon_cert_nginx.crt
+```
+Update Nginx configuration by including the newly signed certificate and private key:
+
+```
+sysadmin@appserver:/opt/nginx/ssl$ cd /opt/nginx/sites-available
+sysadmin@appserver:/opt/nginx/sites-available$ sudo vi beacon
+```
+make sure the following lines are in the /opt/nginx/sites-available/beacon file ssl server configuration
+
+```
+ssl_certificate /opt/nginx/ssl/beacon_cert_nginx.crt;
+ssl_certificate_key /opt/nginx/ssl/beacon_cert_nginx.key;
+```
+ 
+# Enable the beacon site in Nginx
+
+```
+sysadmin@appserver:/opt/nginx$ sudo ln -s /opt/nginx/sites-available/beacon /opt/nginx/sites-enables/beacon
+```
+
+# reload the nginx server configuration
+
+```
+sysadmin@appserver:/opt/nginx$ sudo service nginx reload 
+```
 
