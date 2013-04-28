@@ -1,6 +1,8 @@
-** Install git **
+## Install git
 
+```
 sudo apt-get install git-core
+```
 
 **- Install postgres client**
 
