@@ -39,15 +39,28 @@ sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 ```
 
-- now We can control Nginx with this script. To start and stop the server manually, run:
-
+** now We can control Nginx with this script. To start and stop the server manually, run: **
+```
 sudo /etc/init.d/nginx stop
-
 sudo /etc/init.d/nginx start
+```
 
-## Nginx server
+## Nginx server configuration
 
-Edit the file `/opt/nginx/conf/nginx.conf` to add the following lines
+create Nginx server folders 
+
+```
+sysadmin@appserver:/opt/nginx$ sudo mkdir include.d
+sysadmin@appserver:/var/canvas$ cd /opt/nginx
+sysadmin@appserver:/opt/nginx$ sudo mkdir ssl
+sysadmin@appserver:/opt/nginx$ sudo mkdir sites-available
+sysadmin@appserver:/opt/nginx$ sudo mkdir sites-enabled
+```
+
+### Edit the nginx.conf
+
+Edit the file `/opt/nginx/conf/nginx.conf` and repalace all the lines with the following lines. 
+We can change the worker_processes to 4 in production
 
 ```
 user www-data;
@@ -90,20 +103,14 @@ http {
     include /opt/nginx/sites-enabled/*;
 }
 ```
- 
+
+### Edit the passenger.conf
 
 
-**Verifying that Passenger is running**
-
-passenger-memory-stats
-
+## Verifying that Passenger is running
 
 ```
-sysadmin@appserver:/var/canvas$ cd /opt/nginx
-sysadmin@appserver:/opt/nginx$ sudo mkdir ssl
-sysadmin@appserver:/opt/nginx$ sudo mkdir sites-available
-sysadmin@appserver:/opt/nginx$ sudo mkdir sites-enabled
-
+passenger-memory-stats
 ```
 
 
