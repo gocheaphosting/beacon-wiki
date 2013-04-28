@@ -16,7 +16,9 @@ gem install passenger
 
 - Now install Nginx to work with Passenger
 
-** Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the Ubuntu Package management using apt-get. **
+**
+ Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the Ubuntu Package management using apt-get.
+**
 
 - Run the command 
 
