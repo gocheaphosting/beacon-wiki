@@ -14,11 +14,9 @@ gem install passenger --pre
 gem install passenger 
 ```
 
-- Now install Nginx to work with Passenger
+## install Nginx to work with Passenger
 
-**
  Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the Ubuntu Package management using apt-get.
-**
 
 - Run the command 
 
@@ -49,11 +47,11 @@ sudo /etc/init.d/nginx start
 
 ## Nginx server configuration
 
-create Nginx server folders 
+### create Nginx server folders 
 
 ```
-sysadmin@appserver:/opt/nginx$ sudo mkdir include.d
 sysadmin@appserver:/var/canvas$ cd /opt/nginx
+sysadmin@appserver:/opt/nginx$ sudo mkdir include.d
 sysadmin@appserver:/opt/nginx$ sudo mkdir ssl
 sysadmin@appserver:/opt/nginx$ sudo mkdir sites-available
 sysadmin@appserver:/opt/nginx$ sudo mkdir sites-enabled
@@ -108,6 +106,24 @@ http {
 
 ### Edit the passenger.conf
 
+```
+   sysadmin@appserver:/var/canvas$ cd /opt/nginx/include.d
+   sysadmin@appserver:/var/canvas$ vi passenger.conf    
+```
+
+- Add the following passenger config entries to the passenger.conf
+
+```
+passenger_root /usr/local/lib/ruby/gems/1.9.1/gems/passenger-4.0.0.rc6;
+passenger_ruby /usr/local/bin/ruby;
+passenger_max_pool_size 6;
+passenger_spawn_method smart-lv2;
+passenger_buffer_response on;
+passenger_min_instances 1;
+passenger_max_instances_per_app 0;
+passenger_pool_idle_time 300;
+passenger_max_requests 0;
+```
 
 ## Verifying that Passenger is running
 
