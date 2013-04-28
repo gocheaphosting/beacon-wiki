@@ -107,7 +107,7 @@ sysadmin@appserver:/var/canvas$ sudo chmod 400 config/*.yml
 
 # configure nginx and passenger for canvas
 ```
-sysadmin@appserver:/var/beacon$ cd /opt/nginx/sites-available
+sysadmin@appserver:/var/canvas$ cd /opt/nginx/sites-available
 sysadmin@appserver:/opt/nginx/sites-available$ sudo vi canvas 
 ```
 
@@ -128,7 +128,7 @@ add the following lines to create the https site configurations
 server  {
                listen 443;
                server_name lms.arrivu.corecloud.com;
-               root /var/beacon/public;
+               root /var/canvas/public;
                            charset utf-8;
                            include mime.types;
                            default_type application/octet-stream;
@@ -156,7 +156,7 @@ sysadmin@appserver:/opt/nginx/ssl$ sudo openssl genrsa -des3 -out canvas_cert_ng
 Create the Certificate Signing Request (CSR):
 
 ```
-sysadmin@appserver:/opt/nginx/ssl$ sudo openssl req -new -key canvas_cert_nginx.key -out beacon_cert_nginx.csr
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl req -new -key canvas_cert_nginx.key -out canvas_cert_nginx.csr
 ```
 
 This will as lot of questions and enter the server name as ** lms.arrivu.corecloud.com **
@@ -164,14 +164,14 @@ This will as lot of questions and enter the server name as ** lms.arrivu.coreclo
 Remove the necessity of entering a passphrase for starting up nginx with SSL using the above private key:
 
 ```
-sysadmin@appserver:/opt/nginx/ssl$ sudo cp beacon_cert_nginx.key canvas_cert_nginx.key.org
-sysadmin@appserver:/opt/nginx/ssl$ sudo openssl rsa -in canvas_cert_nginx.key.org -out beacon_cert_nginx.key
+sysadmin@appserver:/opt/nginx/ssl$ sudo cp canvas_cert_nginx.key canvas_cert_nginx.key.org
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl rsa -in canvas_cert_nginx.key.org -out canvas_cert_nginx.key
 ```
 
 Finally sign the certificate using the above private key and CSR:
 
 ```
-sysadmin@appserver:/opt/nginx/ssl$ sudo openssl x509 -req -days 365 -in canvas_cert_nginx.csr -signkey beacon_cert_nginx.key -out beacon_cert_nginx.crt
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl x509 -req -days 365 -in canvas_cert_nginx.csr -signkey canvas_cert_nginx.key -out canvas_cert_nginx.crt
 ```
 Update Nginx configuration by including the newly signed certificate and private key:
 
@@ -179,14 +179,14 @@ Update Nginx configuration by including the newly signed certificate and private
 sysadmin@appserver:/opt/nginx/ssl$ cd /opt/nginx/sites-available
 sysadmin@appserver:/opt/nginx/sites-available$ sudo vi canvas
 ```
-make sure the following lines are in the /opt/nginx/sites-available/beacon file ssl server configuration
+make sure the following lines are in the /opt/nginx/sites-available/canvas file ssl server configuration
 
 ```
 ssl_certificate /opt/nginx/ssl/canvas_cert_nginx.crt;
 ssl_certificate_key /opt/nginx/ssl/canvas_cert_nginx.key;
 ```
  
-# Enable the beacon site in Nginx
+# Enable the canvas site in Nginx
 
 ```
 sysadmin@appserver:/opt/nginx$ sudo ln -s /opt/nginx/sites-available/canvas /opt/nginx/sites-enables/canvas
