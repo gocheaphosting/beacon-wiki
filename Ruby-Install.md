@@ -13,13 +13,15 @@ apt-get install postgresql-client
 ## Install apt dependencies and other supporting lib packages
 
 ```
- apt-get install zlib1g-dev libxml2-dev libmysqlclient-dev libxslt1-dev   imagemagick libpq-dev nodejs libxmlsec1-dev libcurl4-gnutls-dev bison openssl libxmlsec1 
+ apt-get install zlib1g-dev libxml2-dev libmysqlclient-dev libxslt1-dev \
+  imagemagick libpq-dev nodejs libxmlsec1-dev libcurl4-gnutls-dev bison openssl libxmlsec1 
 ```
 
 ## Install build related packages
 
 ```
-apt-get install build-essential libreadline6 libreadline6-dev zlib1g libssl-dev libyaml-dev autoconf libc6-dev ncurses-dev  
+apt-get install build-essential libreadline6 libreadline6-dev zlib1g \
+libssl-dev libyaml-dev autoconf libc6-dev ncurses-dev  
 
 ```
 
