@@ -147,7 +147,7 @@ passenger-memory-stats
 ## Nginx Disabling passenger without uninstalling
 
 To temporarily unload (disable)  Passenger from the web server, without uninstalling the Passenger files
-Connect out the following three lines in the 
+Connect out the following three lines in the passenger.conf file
 
 ```
 # passenger_root /somewhere/passenger-x.x.x;
