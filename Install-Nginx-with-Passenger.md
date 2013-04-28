@@ -24,8 +24,8 @@ gem install passenger
 passenger-install-nginx-module
 ```
 
-# Choose "download, compile, and install Nginx for me"
-# Accept defaults for any other questions it asks
+- Choose "download, compile, and install Nginx for me"
+- Accept defaults for any other questions it asks
 
 
 ## setup a script to control Nginx from Linux service
