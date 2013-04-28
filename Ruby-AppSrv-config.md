@@ -71,10 +71,3 @@ gem install bundler
 gem install rake
 ```
 
-**Install Nginx with Passenger**
-
-**Install Passenger gem **
-
-Note : - We need to install passenger 4.0 and currently it is a release candidate 6. 
-
-To get the RC package run the command 
