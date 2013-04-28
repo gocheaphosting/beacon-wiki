@@ -199,3 +199,76 @@ sysadmin@appserver:/opt/nginx$ sudo service nginx reload
 ```
 
 ## Cache configuration
+
+### Redis config
+
+```
+sysadmin@appserver:/var/canvas$ sudo apt-get install redis-server
+sysadmin@appserver:/var/canvas$ cd /var/canvas/
+sysadmin@appserver:/var/canvas$ cp config/cache_store.yml.example config/cache_store.yml
+sysadmin@appserver:/var/canvas$ nano config/cache_store.yml
+```
+
+The file starts with all caching methods commented out. Uncomment the `cache_store: redis_store` line of the config file. 
+
+```yaml
+# if this file doesn't exist, memcache will be used if there are any
+# servers configured in config/memcache.yml
+production:
+  cache_store: redis_store
+  # if no servers are specified, we'll look in config/redis.yml
+  # servers:
+  # - localhost
+  # database: 0
+```
+  database: 0
+
+Then specify your redis instance information in `redis.yml`, by coping and editing [redis.yml.example](https://github.com/instructure/canvas-lms/blob/stable/config/redis.yml.example):
+
+    sysadmin@appserver:/var/canvas$ cd /var/canvas/
+    sysadmin@appserver:/var/canvas$ cp config/redis.yml.example config/redis.yml
+    sysadmin@appserver:/var/canvas$ nano config/redis.yml
+
+```yaml
+production:
+  servers:
+  - localhost
+```
+
+In our example, redis is running on the same server as Canvas. That's not ideal in a production setup, since Rails and redis are both memory-hungry. Just change 'localhost' to the address of your redis instance server.
+
+Canvas has the option of using a different redis instance for cache and for other data. The simplest option is to use the same redis instance for both. If you would like to split them up, keep the redis.yml config for data redis, but add another separate server list to cache_store.yml to specify which instance to use for caching.
+
+QTIMigrationTool
+================
+
+The QTIMigrationTool needs to be installed for copying content from one Canvas course to another to succeed. Instructions are at https://github.com/instructure/QTIMigrationTool/wiki. When Canvas is installed activate the plugin in Site Admin -> Plugins -> QTI Converter.
+
+Automated jobs
+========
+
+Canvas has some automated jobs that need to run at occasional intervals, such as email reports, statistics gathering, and a few other things. Your Canvas installation will not function properly without support for automated jobs, so we'll need to set that up as well.
+
+Canvas comes with a daemon process that will monitor and manage any automated jobs that need to happen. If your application root is */var/canvas*, this daemon process manager can be found at */var/canvas/script/canvas_init*. 
+
+**You'll need to run these job daemons on at least one server.** Canvas supports running the background jobs on multiple servers for capacity/redundancy, as well.
+
+Because Canvas has so many jobs to run, it is advisable to dedicate one of your app servers to be just a job server. You can do this by simply skipping the Apache steps on one of your app servers, and then only on that server follow these automated jobs setup instructions.
+
+Installation
+----
+
+If you're on Debian/Ubuntu, you can install this daemon process very easily, first by making a symlink from */var/canvas/script/canvas_init* to */etc/init.d/canvas_init*, and then by configuring this script to run at valid runlevels (we'll be making an *upstart* script soon):
+
+```
+sysadmin@appserver:/var/canvas$ sudo ln -s /var/canvas/script/canvas_init /etc/init.d/canvas_init
+sysadmin@appserver:/var/canvas$ sudo update-rc.d canvas_init defaults
+sysadmin@appserver:/var/canvas$ sudo /etc/init.d/canvas_init start
+```
+
+Ready, set, go!
+========
+
+Restart nginx (`sudo /etc/init.d/nginx restart`), and point your browser to your new Canvas installation! Log in with the administrator credentials you set up during database configuration, and you should be ready to use Canvas.
+
+
