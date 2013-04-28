@@ -1,6 +1,18 @@
 ## Installing Postgres
 Follow [Postgresql ](https://github.com/m-narayan/beacon/wiki/Postgresql-Config) install to make sure that the database is ready
 
+## Create user and databases for canvas
+
+```
+psql -U postgres
+create user canvas password 'canvas';
+CREATE DATABASE canvas_production ENCODING 'UTF8' OWNER canvas;
+CREATE DATABASE canvas_queue_production ENCODING 'UTF8' OWNER canvas;
+GRANT ALL PRIVILEGES ON DATABASE canvas_production to canvas;
+GRANT ALL PRIVILEGES ON DATABASE canvas_queue_production to canvas;
+\q
+```
+
 ## Install Ruby and Nginx with Passenger  
 
 Follow [Ruby AppSrv ](https://github.com/m-narayan/beacon/wiki/Ruby-AppSrv-config) install to configure the server
