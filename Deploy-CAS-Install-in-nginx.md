@@ -15,12 +15,65 @@ sysadmin@appserver:~/projects/cas$ cd /var/cas
 sysadmin@appserver:/var/cas$ bundle install --deployment --without=sqlite
 ```
 
+## Create user and databases for canvas
+
+```
+psql -U postgres
+create user rubycas password 'rubycas';
+CREATE DATABASE canvas_production ENCODING 'UTF8' OWNER rubycas;
+GRANT ALL PRIVILEGES ON DATABASE casserver_production to rubycas;
+\q
+```
+
+## Grant rubycas db user the privilage to select on beacon_production.users table
+```
+psql -U postgres
+GRANT SELECT ON users TO rubycas;
+\q
+```
 #rubycas configuration
 
 ```
-sysadmin@appserver:/var/cas$ vi config/database.yml
+sysadmin@appserver:/var/cas$ vi config.yml
 ```
-Update this section to reflect your Postgres server's location and authentication credentials
+
+Add the following lines and update this section to reflect your Postgres server's location and authentication credentials
+
+```yaml
+
+uri_path: /cas
+
+database:
+  adapter: postgresql
+  database: casserver_production
+  username: rubycas
+  password: rubycas
+  host: 192.168.1.51
+  reconnect: true
+
+authenticator:
+  - class: CASServer::Authenticators::SQL
+    database:
+      adapter: postgresql
+      #database: casserver_production
+      database: beacon_production
+      username: rubycas
+      password: rubycas
+      host: 192.168.1.51
+    user_table: users
+    username_column: email
+    password_column: encrypted_password
+
+# By default, we use the 'simple' theme which you can find in themes/simple.
+theme: simple
+
+# The name of your company/organization. This will show up on the login page.
+organization: ArrivuSystems
+
+log:
+  file: log/casserver.log
+
+```
 
 # configure nginx and passenger for cas
 ```
