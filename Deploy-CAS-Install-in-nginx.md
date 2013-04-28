@@ -15,7 +15,7 @@ sysadmin@appserver:~/projects/cas$ cd /var/cas
 sysadmin@appserver:/var/cas$ bundle install --deployment --without=sqlite
 ```
 
-## Create user and databases for canvas
+## Create user and databases for casserver
 
 ```
 psql -U postgres
