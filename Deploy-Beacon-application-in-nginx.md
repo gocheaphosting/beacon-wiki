@@ -15,6 +15,16 @@ sysadmin@appserver:~/projects/beacon$ cd /var/canvas
 sysadmin@appserver:/var/beacon$ bundle install --path vendor/bundle --without=sqlite
 ```
 
+## Create user and databases for beacon
+
+```
+psql -U postgres
+create user beacon password 'beacon';
+CREATE DATABASE beacon_production ENCODING 'UTF8' OWNER beacon;
+GRANT ALL PRIVILEGES ON DATABASE beacon_production to beacon;
+\q
+```
+
 #Database configuration
 
 ```
@@ -128,4 +138,3 @@ sysadmin@appserver:/opt/nginx$ sudo ln -s /opt/nginx/sites-available/beacon /opt
 ```
 sysadmin@appserver:/opt/nginx$ sudo service nginx reload 
 ```
-
