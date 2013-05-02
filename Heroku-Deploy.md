@@ -13,4 +13,4 @@
 1. heroku open
 1. heroku rename <Your app name >
 1. To check Heroku logs: <br>
-   heroku logs --tail
+   $heroku logs --tail
