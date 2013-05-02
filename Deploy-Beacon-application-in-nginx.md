@@ -35,9 +35,9 @@ Update this section to reflect your Postgres server's location and authenticatio
 # Database population
 
 ```
-sysadmin@appserver:/var/beacon$ bundle exec rake db:migrate
-sysadmin@appserver:/var/beacon$ bundle exec rake db:populate
-sysadmin@appserver:/var/beacon$ bundle exec rake db:seed
+sysadmin@appserver:/var/beacon$ RAILS_ENV=production bundle exec rake db:migrate
+sysadmin@appserver:/var/beacon$ RAILS_ENV=production bundle exec rake db:populate
+sysadmin@appserver:/var/beacon$ RAILS_ENV=production bundle exec rake db:seed
 ```
 
 # Assets pre-complie
