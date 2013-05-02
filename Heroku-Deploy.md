@@ -2,6 +2,7 @@
 1. Install heroku toolbet
 1. $heroku create --stack cedar
 1. $git remote -v
+1. $git remote rm heroku
 1. $git remote add heroku git@heroku.com:beacon-learning.git
 1. $git remote -v
 1. $git push heroku master
