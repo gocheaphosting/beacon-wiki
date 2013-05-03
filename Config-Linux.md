@@ -32,7 +32,7 @@ network 192.168.1.0
 broadcast 192.168.1.255
 gateway 192.168.1.1
 dns-nameservers 192.168.1.1 8.8.8.8 8.8.4.4
-````
+```
 
 - Now add in the DNS settings by editing the resolv.conf file:
 
