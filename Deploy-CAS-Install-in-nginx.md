@@ -27,7 +27,7 @@ GRANT ALL PRIVILEGES ON DATABASE casserver_production to rubycas;
 
 ## Grant rubycas db user the privilage to select on beacon_production.users table
 ```
-psql -U postgres
+psql -U postgres - beacon_production
 GRANT SELECT ON users TO rubycas;
 \q
 ```
