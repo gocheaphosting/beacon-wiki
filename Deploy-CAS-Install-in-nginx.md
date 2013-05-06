@@ -20,7 +20,7 @@ sysadmin@appserver:/var/cas$ bundle install --deployment --without=sqlite
 ```
 psql -U postgres
 create user rubycas password 'rubycas';
-CREATE DATABASE canvas_production ENCODING 'UTF8' OWNER rubycas;
+CREATE DATABASE casserver_production ENCODING 'UTF8' OWNER rubycas;
 GRANT ALL PRIVILEGES ON DATABASE casserver_production to rubycas;
 \q
 ```
