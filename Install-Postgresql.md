@@ -19,6 +19,10 @@ to
 
 ## Change the Postgres to listn for network connections
 
+```
+sudo vi /etc/postgresql/9.1/main/postgresql.conf
+```
+
 -change the Connection Settings 
 
  - listen_addresses = 'localhost' 
