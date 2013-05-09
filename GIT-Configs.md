@@ -13,6 +13,8 @@ git push
 ```
 git checkout develop
 git merge stable
+git add .
+git commit -m "merge upstream origin/stable/YYYY-MM-DD"
 ```
 
  
