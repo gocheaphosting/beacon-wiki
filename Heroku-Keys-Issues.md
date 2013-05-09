@@ -1,7 +1,6 @@
-
     $heroku login
     $heroku keys:add
-        $herku keys
+        $heroku keys
         $heroku keys:remove <key name>
     Still having problem
         remove the ssh directory
