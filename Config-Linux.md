@@ -58,4 +58,53 @@ sudo apt-get remove dhcp-client3
 - restart the networking service
 sudo /etc/init.d/networking restart
 
+## Create a new Linux User
+
+```
+sudo useradd elf
+passwd elf
+```
+
+## Add a user to sudoers
+
+Open Sudoers file
+
+sudo visudo
+
+will open the /etc/sudoers file in GNU nano
+
+if not try export EDITOR="nano" and try again sudo visudo
+
+add the below line to the end of file
+
+username ALL=(ALL) ALL change the user name before you issue the commands
+
+Then perform WriteOut with the CTRL+O
+
+Editor will ask you for the file name to write into
+
+default will be /etc/sudoers.tmp
+
+File Name to Write: /etc/sudoers.tmp
+
+Change that to /etc/sudoers
+
+File Name to Write: /etc/sudoers
+
+A prompt will be dispalyed
+
+File exists, OVERWRITE ?
+
+or
+
+Save file under DIFFERENT NAME ?
+
+In both cases, press Y
+
+Quit the nano editor with CTRL+X
+
+Done!
+
+
+
 
