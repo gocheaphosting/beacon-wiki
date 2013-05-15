@@ -3,6 +3,8 @@
 ```
 git clone git@github.com:m-narayan/canvas-lms.git canvas-lms
 cd canvas-lms
+git remote -v
+# if there is no upstream then add the following 
 git remote add upstream https://github.com/instructure/canvas-lms.git
 git pull upstream stable
 # make sure there is no merge conflits and other problems
@@ -26,4 +28,3 @@ git commit -m "merge upstream origin/stable/YYYY-MM-DD"
 ```
 
  
-
