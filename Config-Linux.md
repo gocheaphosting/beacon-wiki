@@ -120,3 +120,8 @@ OR
 
 iotop: Linux Disk I/O Monitor Command
 dstat - Versatile resource statistics tool
+
+
+# block a ip usin giptables
+
+iptables -A INPUT -s 176.31.145.16 -j DROP
