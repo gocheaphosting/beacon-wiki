@@ -108,3 +108,13 @@ Done!
 
 
 
+Find out who is monopolizing or eating the CPUs
+
+Finally, you need to determine which process is monopolizing or eating the CPUs. Following command will displays the top 10 CPU users on the Linux system.
+
+```
+# ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
+OR
+# ps -eo pcpu,pid,user,args | sort -r -k1 | less
+```
+
