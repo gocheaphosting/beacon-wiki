@@ -64,7 +64,7 @@ set :deploy_to, "/var/capistrano/beacon/portal_staging"
 ```
 In this example, we have only one server being assigned all three roles (app, web and db) but in real, we may use different servers for these roles.
 
-## Validating your Recipe
+## Validating the Recipe
 
 For the first time run, Capistrano create the initial directory structure on your server for future deployments. Run the following command from the root directory of the application:
 
@@ -82,7 +82,7 @@ cap deploy:check
 
 This command will check your local environment and your server and locate likely problems. If you see any error messages, fix them and run the command again. Once you can run cap deploy:check without errors, you can proceed!
 
-## Deploy Using your New Recipe
+## Deploy Using the New Recipe
 
 Once the verification complete on the local machine and server configuration, run the following command:
 
@@ -95,3 +95,50 @@ This will perform a deployment to your default stage, which is staging. If you w
 ```
 cap production deploy
 ```
+
+##Improve Performance with Remote Cache
+
+Capistrano normally create a new clone/export of the repository on every deploy but the following option makes Capistrano do a single clone of the repository on the server during the first time, then do an git pull on every deploy instead of doing an entire clone/export.
+
+```
+set :deploy_via, :remote_cache
+```
+
+## Add Custom Deploy Hooks
+
+You can configure events and commands to run after the copying of files completes, such as restart a web-server or run a custom script. Capistrano calls these as “tasks”. For an example, add the following code to your deploy.rb file:
+```
+namespace :deploy do
+  task :restart, :roles => :web do
+    run "touch #{ current_path }/tmp/restart.txt"
+  end
+
+  task :restart_canvas_init, :roles => :app do
+    sudo "monit restart all -g daemons"
+  end
+end
+````
+This example includes two custom tasks. The “restart” task is built into Capistrano and will be executed by Capistrano automatically after the deployment is complete. We use the touch tmp/restart.txt technique that’s common to modern Rails applications powered by Passenger.
+
+The second example task is "restart_canvas_init", a custom task that Capistrano won’t run by default. We need to add a hook for it in order for it to run:
+```
+after "deploy", "deploy:restart_canvas_init" 
+```
+This command tells Capistrano to execute our task after all deploy operations are complete. You can read more about before and after hooks in the official Capistrano documentation:
+* [Before Tasks](https://github.com/capistrano/capistrano/wiki/2.x-DSL-Configuration-Tasks-Before)
+* [After Tasks](https://github.com/capistrano/capistrano/wiki/2.x-DSL-Configuration-Tasks-After)
+
+## Associate Git Branches With Environments
+
+Since we have two server environments (staging and production) it is best practice to use branches in Git to these environments, so that you can deploy staging branch to staging environment and master branch to production automatically. add the following line to your production.rb:
+```
+set :branch, 'production'
+```
+
+And the following line to staging.rb:
+```
+set :branch, 'staging'
+```
+Now the **_cap deploy_** command will deploy code from the staging branch since staging is our default environment. If you run _**cap production deploy**_ will deploy code from the master branch. 
+
+
