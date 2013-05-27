@@ -117,7 +117,8 @@ namespace :deploy do
     sudo "monit restart all -g daemons"
   end
 end
-````
+```
+
 This example includes two custom tasks. The “restart” task is built into Capistrano and will be executed by Capistrano automatically after the deployment is complete. We use the touch tmp/restart.txt technique that’s common to modern Rails applications powered by Passenger.
 
 The second example task is "restart_canvas_init", a custom task that Capistrano won’t run by default. We need to add a hook for it in order for it to run:
