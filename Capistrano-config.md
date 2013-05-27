@@ -7,4 +7,5 @@ gem install capistrano-ext
 ```
 
 ##Server Dependencies
-It’s important to make sure that your server is POSIX-compilant and has SSH access.
+It’s important to make sure that your server is POSIX-compilant and has SSH access. It is better to setup the ssh public/private key authentication for the sysadmin user to deploy the code. 
+Use the [SSH-With-Public-Key-Authentication](https://github.com/m-narayan/beacon/wiki/Set-Up-SSH-With-Public-Key-Authentication) for public key setup.
