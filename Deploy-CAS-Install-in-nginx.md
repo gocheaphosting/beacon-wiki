@@ -1,3 +1,10 @@
+# Install sqlite dependency
+
+We need to install sql-lite to make the bundle install work. There may be some other library has the dependency on sql-lite and the bundler option --without=sqllite also won't work!!!.
+
+```
+sudo apt-get install libsqlite3-dev
+```
 # get cas code
 
 ```
@@ -27,7 +34,7 @@ GRANT ALL PRIVILEGES ON DATABASE casserver_production to rubycas;
 
 ## Grant rubycas db user the privilage to select on beacon_production.users table
 ```
-psql -U postgres - beacon_production
+psql -U postgres -d beacon_production
 GRANT SELECT ON users TO rubycas;
 \q
 ```
