@@ -1,4 +1,4 @@
-# Install sqlite dependency
+#Install sql-lite dependency
 
 We need to install sql-lite to make the bundle install work. There may be some other library has the dependency on sql-lite and the bundler option --without=sqllite also won't work!!!.
 
