@@ -1,14 +1,14 @@
 ## Postgresql Install
 
-`sudo apt-get install postgresql-9.1`
+`sudo apt-get install postgresql-9.2`
 
 ## Install postgresql-contrib packages
 
-`sudo apt-get install postgresql-contrib`
+`sudo apt-get install postgresql-contrib-9.2`
 
 ## Change the user authentication method
 
- `sudo vi /etc/postgresql/9.1/main/pg_hba.conf`
+ `sudo vi /etc/postgresql/9.2/main/pg_hba.conf`
 
  - local      all     postgres     peer 
 to
@@ -20,7 +20,7 @@ to
 ## Change the Postgres to listn for network connections
 
 ```
-sudo vi /etc/postgresql/9.1/main/postgresql.conf
+sudo vi /etc/postgresql/9.2/main/postgresql.conf
 ```
 
 -change the Connection Settings 
@@ -53,13 +53,13 @@ The output is:
 
 ```
 
-/usr/lib/postgresql/9.1/lib/adminpack.so
-/usr/share/postgresql/9.1/extension/adminpack--1.0.sql
-/usr/share/postgresql/9.1/extension/adminpack.control
+/usr/lib/postgresql/9.2/lib/adminpack.so
+/usr/share/postgresql/9.2/extension/adminpack--1.0.sql
+/usr/share/postgresql/9.2/extension/adminpack.control
 
 ```
 
-In PostgreSQL 9.1 and later, extensions can be installed via the CREATE EXTENSION command:
+In PostgreSQL 9.2 and later, extensions can be installed via the CREATE EXTENSION command:
 
 ```
 
