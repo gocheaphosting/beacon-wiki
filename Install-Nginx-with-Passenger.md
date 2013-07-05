@@ -5,15 +5,8 @@ Note : - ** We need to install passenger 4.0 and currently it is a release candi
 To install the pre-release passenger, run the command 
 
 ```
-gem install passenger --pre
+gem install passenger
 ```
-
--Once this gem is released fully , we have to run the following command
-
-```
-gem install passenger 
-```
-
 ## install Nginx to work with Passenger
 
  Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the Ubuntu Package management using apt-get.
