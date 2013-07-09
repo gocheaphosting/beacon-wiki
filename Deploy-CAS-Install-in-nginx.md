@@ -1,5 +1,4 @@
 
-
 # Install sql-lite dependency
 
 We need to install sql-lite to make the bundle install work. There may be some other library has the dependency on sql-lite and the bundler option --without=sqllite also won't work!!!.
@@ -15,6 +14,7 @@ sysadmin@appserver:~$ sudo mkdir -p /var/cas
 sysadmin@appserver:~$ sudo chown -R sysadmin /var/cas
 sysadmin@appserver:~$ git clone https://github.com/m-narayan/rubycas-server.git
 sysadmin@appserver:~$ cd rubycas-server
+sysadmin@appserver:~/projects/cas$ git branch --set-upstream stable origin/deploy
 sysadmin@appserver:~/projects/cas$ cp -av * /var/cas
 sysadmin@appserver:~/projects/cas$ cd /var/cas
 ```
