@@ -46,6 +46,14 @@ sysadmin@appserver:/var/beacon$ RAILS_ENV=production bundle exec rake db:seed
 sysadmin@appserver:/var/beacon$bundle exec rake assets:precompile
 ```
 
+# 
+
+```
+sysadmin@appserver:/var/beacon$  sudo mkdir -p log tmp/pids public/assets public/stylesheets/compiled
+sysadmin@appserver:/var/beacon$  sudo chown -R canvasuser config/environment.rb log tmp public/assets \
+                                  public/stylesheets/compiled Gemfile.lock config.ru
+```
+
 # configure nginx and passenger for beacon
 ```
 sysadmin@appserver:/var/beacon$ cd /opt/nginx/sites-available
