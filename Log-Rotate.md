@@ -22,20 +22,33 @@ sudo nano /etc/logrotate.d/nginx
 
 /var/www/vhosts/domain.com/logs/*.log {  (we have to give exact path of nginx log directory-/var/log/nginx)
     daily
+
     missingok
+
     rotate 52
+
     compress
+
     delaycompress
+
     notifempty
+
     create 0640 www-data adm
+
     sharedscripts
+
     prerotate
+
         if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
             run-parts /etc/logrotate.d/httpd-prerotate; \
         fi; \
+
     endscript
+
     postrotate
+
         [ ! -f /var/run/nginx.pid ] || kill -USR1 `cat /var/run/nginx.pid`
+
     endscript
 }
 
