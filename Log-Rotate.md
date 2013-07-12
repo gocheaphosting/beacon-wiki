@@ -20,7 +20,7 @@ Sample nginx Log rotate
 sudo nano /etc/logrotate.d/nginx
 
 
-/var/www/vhosts/domain.com/logs/*.log {  (we have to give exact path of nginx log directory-/var/log/nginx)
+/var/log/nginx/*.log {  #we have to give exact path of nginx log directory-/var/log/nginx)
     daily
 
     missingok
@@ -51,4 +51,3 @@ sudo nano /etc/logrotate.d/nginx
 
     endscript
 }
-
