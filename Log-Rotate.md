@@ -51,3 +51,7 @@ sudo nano /etc/logrotate.d/nginx
 
     endscript
 }
+
+# To manually run logtotate :
+
+sudo logrotate -f -v /etc/logrotate.d/nginx
