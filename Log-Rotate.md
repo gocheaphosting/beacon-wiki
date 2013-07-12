@@ -1,3 +1,7 @@
+# Log Rotation
+
+Log rotation is an automated process used in system administration in which dated log files are archived. In general, it is used on servers. Servers which run large applications, such as LAMP stacks, often log every request, and as such, the process of log rotation may be beneficial.
+
 # Files and Directories used by Logrotate
 
 	/etc/logrotate.conf-->whole configuration and default options of logrotate is stored.
@@ -51,6 +55,40 @@ sudo nano /etc/logrotate.d/nginx
 
     endscript
 }
+
+# Sample Rails log rotate
+
+/home/deploy/APPNAME/current/log/*.log {
+
+  daily
+
+  missingok
+
+  rotate 70
+
+  compress
+
+  delaycompress
+
+  notifempty
+
+  copytruncate
+
+} 
+
+daily – Rotate the log files each day. You can also use weekly or monthly here instead.
+
+missingok – If the log file doesn’t exist, ignore it
+
+rotate 7 – Only keep 7 days of logs around
+
+compress – GZip the log file on rotation
+
+delaycompress – Rotate the file one day, then compress it the next day so we can be sure that it won’t interfere with the Rails server
+
+notifempty – Don’t rotate the file if the logs are empty
+
+copytruncate – Copy the log file and then empties it. This makes sure that the log file Rails is writing to always exists so you won’t get problems because the file does not actually change. If you don’t use this, you would need to restart your Rails application each time.
 
 # To manually run logtotate :
 
