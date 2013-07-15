@@ -22,6 +22,11 @@ Now generate the key-pair, a public-key and a private-key. The public-key will b
 ```
 ssh-keygen -t rsa -C "A comment... usually an email is enough here..."
 ```
+Copy the public key to the server
+
+```
+scp -p id_rsa.pub remoteuser@remotehost:
+```
 
 Nowlog in with SSH, and copy the public key to its right place:
 
