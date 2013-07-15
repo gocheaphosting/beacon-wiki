@@ -1,12 +1,12 @@
 # get beacon code
 
 ```
-sysadmin@appserver:~$ sudo mkdir -p /var/beacon
-sysadmin@appserver:~$ sudo chown -R sysadmin /var/beacon
+sysadmin@appserver:~$ sudo mkdir -p /var/deploy/beacon
+sysadmin@appserver:~$ sudo chown -R sysadmin /var/deploy/beacon
 sysadmin@appserver:~$ git clone https://github.com/m-narayan/beacon.git
 sysadmin@appserver:~$ cd beacon
-sysadmin@appserver:~/projects/beacon$ cp -av * /var/beacon
-sysadmin@appserver:~/projects/beacon$ cd /var/canvas
+sysadmin@appserver:~/projects/beacon$ cp -av * /var/deploy/beacon
+sysadmin@appserver:~/projects/beacon$ cd /var/deploy/beacon
 ```
 
 # Bundle and beacon dependencies
