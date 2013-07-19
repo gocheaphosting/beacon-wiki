@@ -22,7 +22,8 @@ Various sub category on Account : (for Each organization)
 
  
 **3)Tax :**
-           This contains the tax details of the organization.
+          
+        This contains the tax details of the organization.
 
 **4) Testimonials :**           
 
