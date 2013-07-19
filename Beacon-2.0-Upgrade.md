@@ -11,10 +11,10 @@
 
 Various sub category on Account : (for Each organization)
  
- ** 1)Category:**
+ ** 1)Category :**
            This contains various categories in an organization such as Analytics,Economics,management etc.
 
-** 2) Account Users:**
+** 2) Account Users :**
           
             This contains the details about how many users had an account on that particular organization .it may be teachers,students.
 
