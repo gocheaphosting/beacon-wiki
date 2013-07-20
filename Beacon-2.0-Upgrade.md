@@ -2,7 +2,9 @@
 
 # Account : (organization)
 
-     This contains the details of the various organization who are going to create an account on the application.it contains details such as Name,organization,contact details, no of courses and number of users.
+     This contains the details of the various organization who are going to create 
+an account on the application.it contains details such as Name,organization,contact 
+details, no of courses and number of users.
 
 
 # Account Settings:
