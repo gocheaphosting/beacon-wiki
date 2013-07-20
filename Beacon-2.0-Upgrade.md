@@ -55,7 +55,7 @@ Various sub category on Account : (for Each organization)
   
          This section contains the list of teaching staff who are in that particular organization.
 
- **11)Students : **
+ **11)Students :**
 
          This section contains the details of students in that particular organization .
 
