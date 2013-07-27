@@ -19,7 +19,7 @@ psql -c"alter user postgres with password 'postgres';"
  
 sudo vi /etc/sysctl.conf
 """
-kernel.shmmax=8589934592   (8G * 1024 * 1024 * 1024)
+kernel.shmmax=1073741824    (1G * 1024 * 1024 * 1024)
 """
  
 /sbin/sysctl -p
