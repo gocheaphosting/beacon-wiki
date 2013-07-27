@@ -1,12 +1,48 @@
 ## Postgresql Install
 
-`sudo apt-get install postgresql-9.2`
-
-## Install postgresql-contrib packages
-
-`sudo apt-get install postgresql-contrib-9.2`
+```
+sudo apt-get update
+sudo apt-get -y install python-software-properties
+sudo add-apt-repository ppa:pitti/postgresql
+sudo apt-get update
+ 
+sudo apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2
+sudo apt-get -y install postgresql-server-dev-9.2 libpq-dev
+```
 
 ## Change the user authentication method
+
+```
+sudo passwd postgres
+su - postgres
+psql -c"alter user postgres with password 'postgres';"
+ 
+sudo vi /etc/sysctl.conf
+"""
+kernel.shmmax=8589934592   (8G * 1024 * 1024 * 1024)
+"""
+ 
+/sbin/sysctl -p
+ 
+sudo vi /etc/postgresql/9.2/main/postgresql.conf
+"""
+#data_directory = '/var/lib/postgresql/9.2/main'
+data_directory = '/mnt/postgresql/9.2/main'
+listen_addresses = '*'
+unix_socket_directory = '/var/run/postgresql'
+shared_buffers = 4096MB    # < kernel.shmmax
+"""
+ 
+sudo vi /etc/postgresql/9.2/main/pg_hba.conf
+'''
+local all postgres              peer
+host  all all 127.0.0.1/32      md5
+host  all all 192.168.1.0/24    md5
+host  all all 10.200.13.221/32  md5
+host  all all 10.200.0.117/32   md5
+host  all all ::1/128           md5
+
+```
 
  `sudo vi /etc/postgresql/9.2/main/pg_hba.conf`
 
