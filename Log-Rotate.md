@@ -1,30 +1,34 @@
-# Log Rotation
+## Log Rotation
 
 Log rotation is an automated process used in system administration in which dated log files are archived. In general, it is used on servers. Servers which run large applications, such as LAMP stacks, often log every request, and as such, the process of log rotation may be beneficial.
 
-# Files and Directories used by Logrotate
+## Files and Directories used by Logrotate
 
-	/etc/logrotate.conf-->whole configuration and default options of logrotate is stored.
+Congfig file
 
-	/var/lib/logrotate.status    or    /var/lib/logrotate/status-->information about the last rotation times of different log files.
+	/etc/logrotate.conf
 
-# The directory thats usually used by logrotate is
+Information about last log rotate
+
+	/var/lib/logrotate.status    or    /var/lib/logrotate/status
+
+## The directory thats usually used by logrotate is
 
 	/etc/logrotate.d
 
-/etc/logrotate.conf -it will include /etc/logrotate.d
+ add the following line in /etc/logrotate.conf 
 
 	include /etc/logrotate.d
 
 # Log rotating nginx
-    No default log rotation like apache so we have to do manually
+   
 
 Sample nginx Log rotate
 
 sudo nano /etc/logrotate.d/nginx
 
 
-/var/log/nginx/*.log {  #we have to give exact path of nginx log directory-/var/log/nginx)
+/var/log/nginx/*.log {  (we have to give exact path of nginx log directory-/var/log/nginx)
     daily
 
     missingok
@@ -56,7 +60,7 @@ sudo nano /etc/logrotate.d/nginx
     endscript
 }
 
-# Sample Rails log rotate
+## Sample Rails log rotate
 
 /home/deploy/APPNAME/current/log/*.log {
 
@@ -75,6 +79,8 @@ sudo nano /etc/logrotate.d/nginx
   copytruncate
 
 } 
+
+### Options
 
 daily – Rotate the log files each day. You can also use weekly or monthly here instead.
 
