@@ -86,11 +86,18 @@ check process redis with pidfile /var/run/redis/redis-server.pid
 
 Disk Usage :
 
-check device disk1 with path /dev/vda
+check device disk1 with path /dev/vda  
+
  start = "/bin/mount /dev/vda"
+
  stop = "/bin/umount /dev/vda"
+
   if space usage > 90% then alert
+
  if space usage > 99% then stop
+
   if inode usage > 90% then alert
+
   if inode usage > 99% then stop
+
    alert alfred@arrivusystems.com
