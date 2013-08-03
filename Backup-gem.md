@@ -1,5 +1,4 @@
 
-
 #  Installation :-
 
 	gem install backup
@@ -375,6 +374,9 @@ $ backup decrypt --encryptor openssl --base64 --salt --in
 	### Update 
 
 		 whenever --update-crontab
+
+
+If crontab executed not automatically give the full path of backup gem
 
 
 
