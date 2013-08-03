@@ -55,7 +55,9 @@ Monit is a utility for managing and monitoring, processes, files, directories an
 
 ### Adding services 
 
-   > Add services in monitrc.conf file
+   > Add services in /etc/monit/monitrc
+
+
 Postgresql
 
 	check process postgresql-9.2 with pidfile /var/run/postgresql/9.2-main.pid
