@@ -194,7 +194,7 @@ How to install backup gem
 How to generate a backup model for postgresql database :
 
 	$ backup generate:model --trigger lms_queue_production_db --archives --databases='postgresql' --compressors=gzip \
-          --storages='local' synchers='rsync_local,' --notifiers='mail'
+          --storages='local' synchers='rsync_local' --notifiers='mail'
 
 	-The above generator will provide us with a backup model file (located in ~/Backup/models/lms_queue_production_db.rb)
 
