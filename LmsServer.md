@@ -162,7 +162,7 @@ How to Configure :
 			  if inode usage > 99% then stop
 			   alert alfred@arrivusystems.com
 
-
+```
 #SSH Monitoring 
 
 check process sshd with pidfile /var/run/sshd.pid
@@ -186,6 +186,8 @@ check process fail2ban with pidfile /var/run/fail2ban/fail2ban.pid
 check process delayed_job with pidfile /var/deploy/canvas/lms-11-07-20013/tmp/pids/delayed_jobs_pool.pid
 start program = "/var/deploy/canvas/current/script/delayed_job -e production start"
 stop program = "/var/deploy/canvas/current/script/delayed_job -e production stop"
+```
+
 
 
 
@@ -576,7 +578,6 @@ ________________________________________________________________________________
 
 
 		
-
 
 
 
