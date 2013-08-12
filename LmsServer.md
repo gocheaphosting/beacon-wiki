@@ -163,6 +163,32 @@ How to Configure :
 			   alert alfred@arrivusystems.com
 
 
+#SSH Monitoring 
+
+check process sshd with pidfile /var/run/sshd.pid
+   start program  "/etc/init.d/ssh start"
+   stop program  "/etc/init.d/ssh stop"
+   if failed port 2002 protocol ssh then restart
+   if 5 restarts within 5 cycles then timeout
+
+#Fail2ban Monitoring 
+
+check process fail2ban with pidfile /var/run/fail2ban/fail2ban.pid
+  group services
+  start program = "/etc/init.d/fail2ban start"
+  stop  program = "/etc/init.d/fail2ban stop"
+  if 5 restarts within 5 cycles then timeout
+
+
+
+# Delayed Jobs Monitoring 
+
+check process delayed_job with pidfile /var/deploy/canvas/lms-11-07-20013/tmp/pids/delayed_jobs_pool.pid
+start program = "/var/deploy/canvas/current/script/delayed_job -e production start"
+stop program = "/var/deploy/canvas/current/script/delayed_job -e production stop"
+
+
+
 How to start/stop/restart monit :
 
  $ sudo /etc/init.d/monit start or sudo service monit start
@@ -550,7 +576,6 @@ ________________________________________________________________________________
 
 
 		
-
 
 
 
