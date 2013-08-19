@@ -56,6 +56,60 @@ sysadmin@appserver:$sudo thin config -C /etc/thin/kandan.yml -c /var/deploy/kand
 sysadmin@appserver:$ cat /etc/thin/kandan.yml
 
 ```
+# We have to chnage the /etc/init.d/thin script to use bundler ,so replace the code with the follwing code.
+```
+sysadmin@appserver:$sudo vi vi /etc/init.d/thin
+
+#!/bin/bash
+DAEMON=/usr/local/bin/thin
+BUNDLE=/usr/local/bin/bundle
+CONFIG_PATH=/etc/thin
+SCRIPT_NAME=/etc/init.d/thin
+
+# Exit if the package is not installed
+[ -x "$DAEMON" ] || exit 0
+
+invoke()
+{
+  CONFIGS=$CONFIG_PATH/*
+  [ -e "$CONFIG_PATH/$2.yml" ] && CONFIGS=$CONFIG_PATH/$2.yml
+  for conf in $CONFIGS
+  do
+    echo "[$1] $conf"
+    user=`grep "^user: " $conf|sed -e 's/^user: //g'`
+    group=`grep "^group: " $conf|sed -e 's/^group: //g'`
+
+    # Switch to the app's directory and set permissions
+    cd `grep "^chdir: " $conf|sed -e 's/^chdir: //g'`
+    [ -d ./log ] && chown $user:$group ./log
+    [ -d ./tmp ] && chown -R $user:$group ./tmp
+
+    # Run with bundler
+    if [ -e Gemfile ] && grep thin Gemfile > /dev/null; then
+      $BUNDLE exec $DAEMON $1 -d --config=$conf
+    # Run with system Thin
+    else
+      $DAEMON $1 -d --config=$conf
+    fi
+  done
+}
+case "$1" in
+  start)
+  invoke start $2
+  ;;
+  stop)
+  invoke stop $2
+     ;;
+  restart)
+  invoke restart $2
+  ;;
+  *)
+  echo "Usage: $SCRIPT_NAME {start|stop|restart} [config_name]" >&2
+  exit 3
+  ;;
+esac
+                                       
+```
 # Create current symlink for kandan
 ```
 sysadmin@appserver:/var/kandan$ ln -s /var/deploy/kandan/kandan-<datestamp> /var/deploy/kandan/current
@@ -97,7 +151,6 @@ server {
   }
 }
 ```
-
 # Enable the Kandan site in Nginx
 
 ```
