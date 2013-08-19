@@ -56,10 +56,10 @@ sysadmin@appserver:$sudo thin config -C /etc/thin/kandan.yml -c /var/deploy/kand
 sysadmin@appserver:$ cat /etc/thin/kandan.yml
 
 ```
-# We have to chnage the /etc/init.d/thin script to use bundler ,so replace the code with the follwing code.
-```
-sysadmin@appserver:$sudo vi vi /etc/init.d/thin
+# We have to change the /etc/init.d/thin script to use bundler ,so replace the code with the follwing code.
 
+sysadmin@appserver:$sudo vi vi /etc/init.d/thin
+```
 #!/bin/bash
 DAEMON=/usr/local/bin/thin
 BUNDLE=/usr/local/bin/bundle
