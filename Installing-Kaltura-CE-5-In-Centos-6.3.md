@@ -1241,3 +1241,217 @@ Enter Password :
 
 Give ur password and get login 
 
+
+***
+
+
+### Setting Up SSL Certificate for Kaltura
+
+
+
+For an SSL encrypted web server you will need a few things. Depending on your install you may or may not have OpenSSL and mod_ssl, Apache's interface to OpenSSL. Use yum to get them if you need them.
+
+
+
+```
+
+# yum install mod_ssl openssl
+
+```
+
+Yum will either tell you they are installed or will install them for you.
+
+
+### Generate a self-signed certificate
+
+
+Using OpenSSL we will generate a self-signed certificate. If you are using this on a production server you are probably likely to want a key from Trusted Certificate Authority, but if you are just using this on a personal site or for testing purposes a self-signed certificate is fine. To create the key you will need to be root so you can either su to root or use sudo in front of the commands
+
+
+
+```
+# Generate private key 
+openssl genrsa -out ca.key 1024 
+
+# Generate CSR 
+openssl req -new -key ca.key -out ca.csr
+
+# Generate Self Signed Key
+openssl x509 -req -days 365 -in ca.csr -signkey ca.key -out ca.crt
+
+# Copy the files to the correct locations
+cp ca.crt /etc/pki/tls/certs
+cp ca.key /etc/pki/tls/private/ca.key
+cp ca.csr /etc/pki/tls/private/ca.csr
+
+```
+
+
+Then we need to update the Apache SSL configuration file
+
+
+```
+
+vi +/SSLCertificateFile /etc/httpd/conf.d/ssl.conf
+
+
+```
+
+Change the paths to match where the Key file is stored. If you've used the method above it will be
+
+
+```
+
+SSLCertificateFile /etc/pki/tls/certs/ca.crt
+
+
+```
+
+
+Then set the correct path for the Certificate Key File a few lines below. If you've followed the instructions above it is:
+
+
+```
+
+SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+
+```
+
+
+Quit and save the file and then restart Apache
+
+
+
+```
+
+/etc/init.d/httpd restart
+
+
+```
+
+
+
+All being well you should now be able to connect over https to your server and see a default Centos page. As the certificate is self signed browsers will generally ask you whether you want to accept the certificate. Firefox 3 won't let you connect at all but you can override this.
+
+
+
+Edit the ssl.conf file
+
+
+```
+
+# vim /etc/httpd/conf.d/ssl.conf 
+
+
+```
+
+Enable This Two Lines 
+
+
+```
+
+# LoadModule ssl_module modules/mod_ssl.so
+
+# Listen 443
+
+# SSLCertificateFile /etc/pki/tls/certs/ca.crt
+
+# SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+
+
+```
+
+
+Then Edit the httpd configuration in 
+
+
+
+```
+
+# vim /etc/httpd/conf/httpd.conf
+
+```
+
+
+Add this Two Lines below Line number 222
+If we need only https we need to Comment the my_kaltura.conf line With #
+
+
+```
+# Include /opt/kaltura/app/configurations/apache/my_kaltura.conf
+# Include /opt/kaltura/app/configurations/apache/my_kaltura_https.conf
+
+```
+
+Navigate to Kaltura httpd Configuration Directory
+
+
+```
+
+# /opt/kaltura/app/configurations/apache
+
+```
+
+
+Copy the File my_kaltura.conf and rename its to https 
+
+
+```
+
+# cp my_kaltura.conf my_kaltura_https.conf
+
+```
+
+
+Edit the File my_kaltura_https
+
+
+```
+
+# vim my_kaltura_https.conf
+
+```
+
+Create a new Kaltura virtual host
+in my_kaltura_https.conf
+Add All Below Contents in virtual Host 
+
+
+
+```
+
+# NameVirtualHost *:443
+
+<VirtualHost *:80> to <VirtualHost *:443>
+
+        <VirtualHost *:443>
+        SSLEngine On
+        SSLCertificateFile /etc/pki/tls/certs/ca.crt
+        SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+```
+
+
+Find the following lines by searching for “http” and change the http in the following lines to https
+
+
+
+```
+
+RewriteRule .*  https://my-kaltura-site.com/kmc
+RewriteRule ^$  https://my-kaltura-site.com
+
+```
+
+
+Restart apache 
+
+
+
+```
+
+# /etc/init.d/httpd restart
+
+```
+
+
+
