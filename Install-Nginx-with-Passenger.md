@@ -43,8 +43,8 @@ sudo /etc/init.d/nginx start
 ### create Nginx server folders 
 
 ```
-sysadmin@appserver:/var/canvas$ cd /opt/nginx
-sysadmin@appserver:/opt/nginx$ sudo mkdir include.d
+sysadmin@appserver:/var/canvas$ cd /opt/nginx/conf
+sysadmin@appserver:/opt/nginx/conf$ sudo mkdir include.d
 sysadmin@appserver:/opt/nginx$ sudo mkdir ssl
 sysadmin@appserver:/opt/nginx$ sudo mkdir sites-available
 sysadmin@appserver:/opt/nginx$ sudo mkdir sites-enabled
