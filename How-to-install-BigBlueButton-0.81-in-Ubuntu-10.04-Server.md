@@ -1084,3 +1084,36 @@ If ant command gives error user command
 
 Then try to Run the and command once more it will generate the development after that copy all Swf files and replace it to change the Footer 
 
+
+To setip use command 
+
+
+```
+
+# sudo bbb-conf --setip your clent ip here 
+
+# sudo bbb-conf --setip 75.141.187.101
+
+```
+
+
+Do a Clean Check 
+
+
+```
+
+# sudo bbb-conf --clean
+
+```
+
+And Check 
+
+
+```
+
+sudo bbb-conf --check
+
+```
+
+
+
