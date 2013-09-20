@@ -22,6 +22,9 @@ Then upgrade Using
 ```
 
 
+![1](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_001.png)
+
+
 Step 2 : If you are using OpenJDK, remove it to minimise any Java conflicts
 
 
@@ -30,6 +33,9 @@ Step 2 : If you are using OpenJDK, remove it to minimise any Java conflicts
 # sudo apt-get remove --purge openjdk*
 
 ```
+
+
+![2](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_002.png)
 
 
 Step 3 :  Install latest version of Oracle JRE/JDK
@@ -73,6 +79,29 @@ Add the following entries to the bottom of your /etc/profile file:
 
 
 ```
+
+
+![4](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_003.png)
+
+
+![5](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_005.png)
+
+
+![6](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_006.png)
+
+
+![7](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_007.png)
+
+
+![8](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_008.png)
+
+
+![9](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_009.png)
+
+
+
+![10](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_010.png)
+
 
 
 
@@ -378,6 +407,8 @@ Install latest version MySQL server using apt-get
 
 ```
 
+![13](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_013.png)
+
 
 Step 5 : Create new MySQL database for Openfire
 
@@ -393,6 +424,11 @@ Log in to MySQL Server as root.
 ```
 
 
+![14](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_014.png)
+
+
+![15](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_015.png)
+
 
 Create the database “dbopenfire”, add new user “openfire” and add new password “openfirepwd” for user “openfire”
 
@@ -407,6 +443,8 @@ mysql> FLUSH PRIVILEGES;
 mysql> quit
 
 ```
+
+![18](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_018.png)
 
 
 Step 6. Download and Install openfire 3.8.2
@@ -433,6 +471,8 @@ Install openfire_3.8.2_all.deb with dpkg command:
 
 ```
 
+![20](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_020.png)
+
 
 ignore all installation errors regarding user and folder permissions.it cause depending on your version of JRE/JDK, Now you need to editing file /etc/init/d/openfire in line 27. Replace java-6-sun with java-6-oracle or java-7-oracle.
 
@@ -457,6 +497,8 @@ Then install
 
 ```
 
+![21](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_021.png)
+
 
 Then Start the Service 
 
@@ -468,6 +510,8 @@ Then Start the Service
 
 
 ```
+
+
 
 
 Step 7.  Allow ports for Openfire
@@ -512,6 +556,9 @@ From computer in your network open your favorite browser  and go to :
 ```
 
 
+![22](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_022.png)
+
+
 Databse Link 
 
 
@@ -522,9 +569,17 @@ jdbc:mysql://localhost:3306/dbopenfire
 
 ```
 
+![25](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_025.png)
+
 
 Replace 192.168.1.4:9090 above with your FQDN or IP address of your ubuntu server. The webpage shown below appears
 
+
+![28](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_028.png)
+
+
+
+![29](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_029.png)
 
 
 
@@ -622,7 +677,15 @@ If While Opening Spark its Does'nt Opens We need to install a 32bit Depency if u
 Now, You will then be able to search for Spark in you unity dash and launch Spark.
 
 
+![30](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_030.png)
+
 
 Here u see the Spark Launched and Entier ur detailes as username , Password and server address and login .
+
+
+
+![31](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_031.png)
+
+
 
 
