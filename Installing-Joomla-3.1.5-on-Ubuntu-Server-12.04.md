@@ -1,0 +1,182 @@
+
+Here im Using ubuntu 12.04 Server 
+Using the IP  192.168.1.100
+
+
+Step 1. Install Web Server (LAMP)
+
+Joomla developed using php script, database MySQL and running on apache web server. So, before install joomla 3.1.5 in ubuntu server you need to install LAMP Server (Linux Apache MySQL PHP). Login to ubuntu server machine via ssh then install it.
+
+
+or you can install lamp server using command tasksel then select LAMP Server Using Installation Media 
+
+
+```
+
+# sudo apt-get install tasksel
+
+```
+
+Start Task selection
+
+
+```
+
+# sudo tasksel
+
+
+```
+
+If not Install it Manually By Following Link 
+
+
+```
+
+https://github.com/babinlonston/Ubuntu-Linux-Stuffs/wiki/Settingup-a-LAMP-Server-in-Ubuntu12.04
+
+```
+
+Step 2. Configure Apache and Create Database
+
+On this step, you need create apache config for joomla in directory apache webserver.
+
+
+```
+
+# sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/joomla
+
+
+```
+
+then enable the Joomla website and restart apache web-server with following commands:
+
+
+```
+
+# sudo a2ensite joomla
+# sudo service apache2 restart
+
+```
+
+Next, Log in to mysql server as root user
+
+
+
+```
+
+# mysql -u root -p
+
+
+```
+
+
+Create database for joomla with command below,in case we’ll create database with name “dbjoomla”
+
+
+
+```
+
+# CREATE DATABASE dbjoomla;
+
+
+```
+
+
+Create a new user of username joomlauser, with following command below:
+
+
+```
+
+# CREATE USER joomlauser;
+
+```
+
+
+Create password “joomlapwd” for user “joomlauser”;
+
+
+```
+
+
+# SET PASSWORD FOR joomlauser = PASSWORD("admin123$");
+
+
+```
+
+
+Grant user joomlauser all permissions on the database.
+
+
+GRANT ALL PRIVILEGES ON dbjoomla.* TO joomlauser@localhost IDENTIFIED BY 'joomlapwd';
+
+
+```
+
+# FLUSH PRIVILEGES;
+
+```
+
+
+Log out from mysql server.
+
+
+```
+# exit
+
+```
+
+Now joomla ready to install on ubuntu server
+
+
+
+
+Step 3. Download and Installing Joomla 3.1.5
+
+Download joomla 3.1.5 from joomla official website. then create directory joomla  in the default apache folder /var/www
+
+
+```
+
+# wget http://joomlacode.org/gf/download/frsrelease/17574/76732/Joomla_3.1.5-Stable-Full_Package.zip
+
+
+```
+Create a Directory Named Joomla inside /var/www/
+
+
+```
+# sudo mkdir /var/www/joomla
+
+```
+
+Extract joomla package has beed downloaded in to directory /var/www/joomla
+
+
+```
+
+# sudo unzip -q Joomla_3.1.5-Stable-Full_Package.zip -d /var/www/joomla
+
+```
+
+
+Change access /var/www/joomla to apache user and goup (www-data) and set permission /var/www/joomla 775
+
+
+```
+# sudo chown -R www-data.www-data /var/www/joomla/
+# sudo chmod -R 777 /var/www/joomla/
+
+```
+
+
+Now you can install joomlo 3.0 from your favorite browser by typing 192.168.1.100/joomla
+
+
+```
+
+# 192.168.1.100/joomla
+
+```
+
+This will Bring this page for the installations 
+
