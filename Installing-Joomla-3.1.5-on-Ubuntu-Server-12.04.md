@@ -7,6 +7,18 @@ Step 1. Install Web Server (LAMP)
 Joomla developed using php script, database MySQL and running on apache web server. So, before install joomla 3.1.5 in ubuntu server you need to install LAMP Server (Linux Apache MySQL PHP). Login to ubuntu server machine via ssh then install it.
 
 
+Update the server using 
+
+```
+# sudo apt-get update
+
+```
+
+
+![1](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_002.png)
+
+
+
 or you can install lamp server using command tasksel then select LAMP Server Using Installation Media 
 
 
@@ -15,6 +27,10 @@ or you can install lamp server using command tasksel then select LAMP Server Usi
 # sudo apt-get install tasksel
 
 ```
+
+
+![2](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_003.png)
+
 
 Start Task selection
 
@@ -25,6 +41,15 @@ Start Task selection
 
 
 ```
+
+
+![3](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_004.png)
+
+
+
+![4](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_005.png)
+
+
 
 If not Install it Manually By Following Link 
 
@@ -43,6 +68,8 @@ On this step, you need create apache config for joomla in directory apache webse
 
 ```
 
+![6](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_006.png)
+
 then enable the Joomla website and restart apache web-server with following commands:
 
 
@@ -52,6 +79,10 @@ then enable the Joomla website and restart apache web-server with following comm
 # sudo service apache2 restart
 
 ```
+
+
+![7](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_007.png)
+
 
 Next, Log in to mysql server as root user
 
@@ -65,6 +96,11 @@ Next, Log in to mysql server as root user
 ```
 
 
+
+![8](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_008.png)
+
+
+
 Create database for joomla with command below,in case we’ll create database with name “dbjoomla”
 
 
@@ -76,6 +112,9 @@ Create database for joomla with command below,in case we’ll create database wi
 
 ```
 
+![9](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_009.png)
+
+
 
 Create a new user of username joomlauser, with following command below:
 
@@ -85,6 +124,8 @@ Create a new user of username joomlauser, with following command below:
 # CREATE USER joomlauser;
 
 ```
+
+![10](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_010.png)
 
 
 Create password “joomlapwd” for user “joomlauser”;
@@ -102,14 +143,27 @@ Create password “joomlapwd” for user “joomlauser”;
 Grant user joomlauser all permissions on the database.
 
 
-GRANT ALL PRIVILEGES ON dbjoomla.* TO joomlauser@localhost IDENTIFIED BY 'joomlapwd';
+```
+
+GRANT ALL PRIVILEGES ON dbjoomla.* TO joomlauser@localhost IDENTIFIED BY 'admin123$';
+
+```
+
+![11](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_011.png)
+
+
+Reload the settings for Mysql 
 
 
 ```
+
 
 # FLUSH PRIVILEGES;
 
 ```
+
+
+![12](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_012.png)
 
 
 Log out from mysql server.
@@ -154,6 +208,9 @@ Extract joomla package has beed downloaded in to directory /var/www/joomla
 ```
 
 
+![14](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_014.png)
+
+
 Change access /var/www/joomla to apache user and goup (www-data) and set permission /var/www/joomla 775
 
 
@@ -162,6 +219,13 @@ Change access /var/www/joomla to apache user and goup (www-data) and set permiss
 # sudo chmod -R 777 /var/www/joomla/
 
 ```
+
+
+
+![15](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_015.png)
+
+
+![16](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_016.png)
 
 
 Now you can install joomlo 3.0 from your favorite browser by typing 192.168.1.100/joomla
@@ -174,4 +238,31 @@ Now you can install joomlo 3.0 from your favorite browser by typing 192.168.1.10
 ```
 
 This will Bring this page for the installations 
+
+
+
+![17](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_017.png)
+
+
+
+![18](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_018.png)
+
+
+![20](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_020.png)
+
+
+
+![21](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_021.png)
+
+
+
+![23](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_023.png)
+
+
+![24](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/Joomla%20Installation/Selection_024.png)
+
+
+That's it
+
+
 
