@@ -1,4 +1,3 @@
-
 Here im Using ubuntu 12.04 Server 
 Using the IP  192.168.1.100
 
@@ -30,11 +29,7 @@ Start Task selection
 If not Install it Manually By Following Link 
 
 
-```
-
-https://github.com/babinlonston/Ubuntu-Linux-Stuffs/wiki/Settingup-a-LAMP-Server-in-Ubuntu12.04
-
-```
+[Settingup a LAMP Server in Ubuntu 12.04](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/wiki/Settingup-a-LAMP-Server-in-Ubuntu12.04)
 
 Step 2. Configure Apache and Create Database
 
