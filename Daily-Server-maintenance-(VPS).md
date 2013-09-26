@@ -1,4 +1,3 @@
-
 Here we can see how to check logs and maintain the server daily 
 
 First of all we need to check the logs daily 
@@ -21,11 +20,12 @@ And in Ubuntu server We or in centos Based Server we need to switch the account 
 
 Then Navigate to the 
 
-```
 
+```
 cd /var/log/
 
-``` 
+```
+
 
 And Use the command tail -f to view the current Logs 
 
@@ -39,13 +39,15 @@ If not instead of -f we can use 20 or even 50 that will output us the Last 20 Lo
 
 we need to check the following Logs in Our Server's Regularly
 
+
 ```
 tail -f /var/log/auth.log
 tail -f /var/log/syslog
 tail -f /var/log/fail2ban.log
 tail -f /var/log/monit.log
 tail -f /var/log/message
-``` 
+
+```
 
 Here i have mentioned the regular path to check the logs , if you are in current directory as /var/log/
 you need to check using tail -f message, tail -f auth.log like this .
