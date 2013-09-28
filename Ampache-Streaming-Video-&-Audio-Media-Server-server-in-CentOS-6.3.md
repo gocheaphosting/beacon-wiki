@@ -310,7 +310,7 @@ Download the latest version of Ampache enter the following command to download i
 
 # wget https://codeload.github.com/ampache/ampache/tar.gz/3.6-alpha6
 
-````
+```
 
 Extract the downloaded file using command:
 
