@@ -39,7 +39,7 @@ Make it Running While in booting
 # chkconfig httpd on
 
 
-````
+```
 
 
 Test Apache:
