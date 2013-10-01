@@ -12,7 +12,7 @@ This Will Backup the Specified Directory to tmp directory using compression meth
 ####################################
 
 # What to backup. 
-backup_files="/home /var/spool/mail "
+backup_files="/home /root "
 
 # Where to backup to.
 dest="/tmp"
