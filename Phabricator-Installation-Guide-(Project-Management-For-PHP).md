@@ -271,7 +271,7 @@ This can’t modify through web, so have to use cmdline
 
 
 ```
-# ./bin/config set phabricator.base-uri 'http://192.168.1.8/
+# ./bin/config set phabricator.base-uri 'http://192.168.1.8/'
 
 ```
 
