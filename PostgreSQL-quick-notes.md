@@ -42,3 +42,12 @@ sudo apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-
 sudo apt-get -y install postgresql-server-dev-9.2 libpq-dev
 
 ```
+
+#### SSH tunnel
+
+```
+ssh -L 1234:localhost:5432 user@192.xxx.x.x
+
+psql -h localhost -p 1234 -U db_username db-name
+
+```
