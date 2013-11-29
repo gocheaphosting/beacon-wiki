@@ -203,6 +203,7 @@ sysadmin@appserver:/opt/nginx$ sudo service nginx reload
 ### Redis config
 
 ```
+sysadmin@appserver:/var/canvas$ sudo apt-add-repository ppa:chris-lea/redis-server
 sysadmin@appserver:/var/canvas$ sudo apt-get install redis-server
 sysadmin@appserver:/var/canvas$ cd /var/canvas/
 sysadmin@appserver:/var/canvas$ cp config/cache_store.yml.example config/cache_store.yml
@@ -270,5 +271,4 @@ Ready, set, go!
 ========
 
 Restart nginx (`sudo /etc/init.d/nginx restart`), and point your browser to your new Canvas installation! Log in with the administrator credentials you set up during database configuration, and you should be ready to use Canvas.
-
 
