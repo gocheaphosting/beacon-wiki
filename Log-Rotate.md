@@ -96,6 +96,6 @@ notifempty – Don’t rotate the file if the logs are empty
 
 copytruncate – Copy the log file and then empties it. This makes sure that the log file Rails is writing to always exists so you won’t get problems because the file does not actually change. If you don’t use this, you would need to restart your Rails application each time.
 
-# To manually run logtotate :
+# To manually run logrotate :
 
 sudo logrotate -f -v /etc/logrotate.d/nginx
