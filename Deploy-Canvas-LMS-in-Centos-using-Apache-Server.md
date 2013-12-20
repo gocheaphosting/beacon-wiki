@@ -123,7 +123,14 @@ Follow This Steps
 
 Passenger Configuration file
 
+Edit the passenger configuration
+
+```
 # vim /etc/httpd/conf.d/passenger.conf
+
+```
+
+Enter the Below entry to file 
 
 ```
 # http://www.modrails.com/documentation/Users%20guide%20Apache.html#_configuring_phusion_passenger
@@ -148,3 +155,36 @@ PassengerMinInstances 2
 PassengerPreStart 192.241.217.62
 
 ```
+
+Apache Virtual-host Configuration
+
+Edit the file 
+
+```
+vim /etc/httpd/conf/httpd.conf
+```
+
+Enter the configuration
+
+```
+LoadModule passenger_module /usr/local/lib/ruby/gems/1.9.1/gems/passenger-4.0.29/buildout/apache2/mod_passenger.so
+
+<VirtualHost *:80>
+  ServerName 192.241.217.62
+  ServerAlias 192.241.217.62
+  DocumentRoot /var/deploy/capistrano/arrivu-lms/current/public
+  ErrorLog /var/log/httpd/canvas_errors.log
+  LogLevel warn
+  CustomLog /var/log/httpd/canvas_access.log combined
+  SetEnv RAILS_ENV production
+  <Directory /var/deploy/capistrano/arrivu-lms/current/public>
+    Allow from all
+    Options -MultiViews
+  </Directory>
+</VirtualHost>
+
+```
+
+Follow this step to setup in centos 
+
+[google Canvas LMS Group for refernce](https://groups.google.com/forum/#!topic/canvas-lms-users/5HSvVtEAAyk)
