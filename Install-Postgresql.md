@@ -1,13 +1,21 @@
 ## Postgresql Install
 
 ```
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get -y install python-software-properties
-sudo add-apt-repository ppa:pitti/postgresql
-sudo apt-get update
+
+##################old install for PG 9.2 no longer needed start ##############
+#sudo apt-get update
+#sudo apt-get -y install python-software-properties
+#sudo add-apt-repository ppa:pitti/postgresql
+#sudo apt-get update
  
-sudo apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2
-sudo apt-get -y install postgresql-server-dev-9.2 libpq-dev
+#sudo apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2
+#sudo apt-get -y install postgresql-server-dev-9.2 libpq-dev
+
+##################old install for PG 9.2 no longer needed end ##############
+
 ```
 
 ## Change the user authentication method
