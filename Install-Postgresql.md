@@ -3,6 +3,7 @@
 ```
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get install postgresql-9.3
 sudo apt-get update
 
 ##################old install for PG 9.2 no longer needed start ##############
