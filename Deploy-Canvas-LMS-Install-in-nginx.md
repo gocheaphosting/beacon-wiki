@@ -150,7 +150,7 @@ create the server private key, you'll be asked for a passphrase: enter the passp
 
 ```
 sysadmin@appserver:/opt/nginx/sites-available$ cd /opt/nginx/ssl
-sysadmin@appserver:/opt/nginx/ssl$ sudo openssl genrsa -des3 -out canvas_cert_nginx.key 1024
+sysadmin@appserver:/opt/nginx/ssl$ sudo openssl genrsa -des3 -out canvas_cert_nginx.key 2048
 ```
 
 Create the Certificate Signing Request (CSR):
@@ -271,4 +271,3 @@ Ready, set, go!
 ========
 
 Restart nginx (`sudo /etc/init.d/nginx restart`), and point your browser to your new Canvas installation! Log in with the administrator credentials you set up during database configuration, and you should be ready to use Canvas.
-
