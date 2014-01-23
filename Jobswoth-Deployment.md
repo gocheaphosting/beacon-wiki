@@ -67,7 +67,7 @@ directly.
 </Context>
 ~~~
 
-5. Add the following to database.yml
+##Add the following to database.yml
 
 ```
 
