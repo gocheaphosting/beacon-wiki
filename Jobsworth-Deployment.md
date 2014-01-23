@@ -108,5 +108,19 @@ staging:
       password: <%= $servlet_context.getInitParameter("config.smtp_password") %>
 
 ~~~
+#### Add the following to nginx sites-available 00pm
 
-#### Restart Tomcat
+~~~
+server {
+    server_name  *.arrivuapps.org;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080;
+    }
+}
+
+~~~
+
+#### Restart Nginx and Tomcat
