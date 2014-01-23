@@ -108,3 +108,5 @@ staging:
       password: <%= $servlet_context.getInitParameter("config.smtp_password") %>
 
 ~~~
+
+#### Restart Tomcat
