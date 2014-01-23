@@ -96,3 +96,15 @@ staging:
   database: jobsworth_staging
 
 ```
+
+#### Add the following to application.yml
+
+~~~
+ smtp:
+      address: <%= $servlet_context.getInitParameter("config.smtp_host") %>
+      port: <%= $servlet_context.getInitParameter("config.smtp_port") %>
+      domain: <%= $servlet_context.getInitParameter("config.smtp_domain") %>
+      user_name: <%= $servlet_context.getInitParameter("config.smtp_user_name") %>
+      password: <%= $servlet_context.getInitParameter("config.smtp_password") %>
+
+~~~
