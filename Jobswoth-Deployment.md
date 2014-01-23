@@ -1,7 +1,7 @@
-1. Create a new database and user in postgresql with full permissions to that database.
-2. Install Apache Tomcat
-3. Deploy https://github.com/ari/jobsworth/releases/download/v4.0b3/ROOT.war in webapps folder.
-4. Add the following to tomcat context.xml
+## Create a new database and user in postgresql with full permissions to that database.
+## Install Apache Tomcat
+## Deploy https://github.com/ari/jobsworth/releases/download/v4.0b3/ROOT.war in webapps folder.
+## Add the following to tomcat context.xml
 
 ~~~
 <?xml version="1.0" encoding="UTF-8"?>
