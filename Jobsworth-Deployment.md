@@ -108,6 +108,13 @@ staging:
       password: <%= $servlet_context.getInitParameter("config.smtp_password") %>
 
 ~~~
+
+#### Add the following to config/environments/production.rb 
+
+~~~
+config.logger = Logger.new('/var/log/jobworth/production.log', 5, 104857)
+~~~
+
 #### Add the following to nginx sites-available 00pm
 
 ~~~
