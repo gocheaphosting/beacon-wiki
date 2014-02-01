@@ -1,5 +1,5 @@
 #### Installation Guide (simply follow line by line):
-```javascript
+```ruby
     yum update
     init 6
 ````
