@@ -1,12 +1,12 @@
 #### Installation Guide (simply follow line by line):
-```markdown
+``` bash
     yum update
     init 6
     yum install git wget dos2unix php-cli
     vim /etc/hosts 
 ```
 ##### Add at the bottom:
-```bash
+``` bash
     127.0.0.1 media.arrivuapps.com
 ```
 ```
