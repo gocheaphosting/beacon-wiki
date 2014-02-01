@@ -73,3 +73,12 @@
    cd /tmp/kalturaCEinstaller/
    ./main.sh
 ```
+##### Post installation do the following:
+```
+   mkdir /opt/kaltura/dwh/logs/  
+   /opt/kaltura/dwh/etlsource/execute/etl_hourly.sh  
+   /opt/kaltura/dwh/etlsource/execute/etl_update_dims.sh  
+   /opt/kaltura/dwh/etlsource/execute/etl_daily.sh  
+   /opt/kaltura/dwh/etlsource/execute/etl_perform_retention_policy.sh  
+   echo `date` >> /opt/kaltura/log/cron.log && /opt/kaltura/app/scripts/dwh/dwh_plays_views_sync.sh >>     /opt/kaltura/log/cron.log 
+```
