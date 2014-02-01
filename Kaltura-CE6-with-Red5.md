@@ -57,11 +57,11 @@
 * Set TIME_ZONE to your Time Zone - http://www.php.net/manual/en/timezones.php
 * Set KALTURA_FULL_VIRTUAL_HOST_NAME to your FQDNS (e.g. kaltura.mydomain.com without protocol. FQDNS: http://www.linfo.org/fqdn.html)
 * Set NFS_SERVER, DWH_HOST, RED5_HOST and SPHINX_DB_HOST to 127.0.0.1
-Set ADMIN_CONSOLE_ADMIN_MAIL and TEST_PARTNER_EMAIL to your email
-Set DB1_USER to root
-Set DB1_PASS to your desired root MySQL password (the install will auto-generate pass for the kaltura user)
-Make sure that at the bottom: WORK_MODE=http (or https if you have valid SSL certificate installed)
-Run the Kaltura install packager script
+* Set ADMIN_CONSOLE_ADMIN_MAIL and TEST_PARTNER_EMAIL to your email
+* Set DB1_USER to root
+* Set DB1_PASS to your desired root MySQL password (the install will auto-generate pass for the kaltura user)
+* Make sure that at the bottom: WORK_MODE=http (or https if you have valid SSL certificate installed)
+#####Run the Kaltura install packager script
 ```
    cd ~/ce-packager/packaging/
    php package.php /tmp/kalturaCEinstaller false CE v6.2.0 dev
