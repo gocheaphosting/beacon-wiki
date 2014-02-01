@@ -82,3 +82,8 @@
    /opt/kaltura/dwh/etlsource/execute/etl_perform_retention_policy.sh  
    echo `date` >> /opt/kaltura/log/cron.log && /opt/kaltura/app/scripts/dwh/dwh_plays_views_sync.sh >>     /opt/kaltura/log/cron.log 
 ```
+##### Red5 Configuration
+```
+   vim /opt/kaltura/web/content/generatedUiConf/0/2/11170221/ui_conf_1.xml 
+```
+* Replace 'rtmp://yoursite.com/oflaDemo' with 'rtmp://media.arrivuapps.com/oflaDemo
