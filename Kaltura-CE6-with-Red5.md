@@ -1,9 +1,9 @@
 #### Installation Guide (simply follow line by line):
 ```console 
-    yum update
-    init 6
-    yum install git wget dos2unix php-cli
-    vim /etc/hosts 
+   yum update
+   init 6
+   yum install git wget dos2unix php-cli
+   vim /etc/hosts 
 ```
 ##### Add at the bottom:
 ``` 
