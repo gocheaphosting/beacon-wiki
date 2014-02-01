@@ -1,6 +1,6 @@
 #### Installation Guide (simply follow line by line):
-```
-    yum update <br>
+```linux
+    yum update
     init 6
 ````
 
