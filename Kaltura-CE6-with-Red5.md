@@ -1,5 +1,5 @@
 #### Installation Guide (simply follow line by line):
-```linux
+```javascript
     yum update
     init 6
 ````
