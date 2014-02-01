@@ -33,6 +33,10 @@
    service ntpd start
    chkconfig ntpd on
 ```
+#####Install Postfix
+```
+   sudo yum install postfix
+```
 ##### Clone the ce-packager repository and fix the git submodules to checkout the known latest working branches:
 ```
    cd ~/   
