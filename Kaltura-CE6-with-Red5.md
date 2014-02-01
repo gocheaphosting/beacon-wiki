@@ -1,5 +1,5 @@
 #### Installation Guide (simply follow line by line):
-```console 
+```sh 
    yum update
    init 6
    yum install git wget dos2unix php-cli
