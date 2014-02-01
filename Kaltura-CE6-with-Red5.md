@@ -93,3 +93,11 @@
    ln -s /opt/kaltura/contnet /opt/kaltura/bin/red5/webapps/oflaDemo/streams
 ```
 ##### Go to CE admin console, and then to the configure tab on the partner that you want to use on your canvas and enable the PS2 permissions.
+```
+   vim /opt/kaltura/app/configurations/logger.ini
+```
+##### To configure log verbosity across your logs, un-comment the following lines in the top of logger.ini 
+```
+   ;writers.stream.filters.priority.name = Zend_Log_Filter_Priority
+   ;writers.stream.filters.priority.priority = 4
+```
