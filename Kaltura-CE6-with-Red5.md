@@ -116,4 +116,4 @@
 ```
 ##### 
 
-[Reference](https://github.com/kaltura/ce-packager/issues/35)
+[Reference: https://github.com/kaltura/ce-packager/issues/35](https://github.com/kaltura/ce-packager/issues/35)
