@@ -101,3 +101,12 @@
    ;writers.stream.filters.priority.name = Zend_Log_Filter_Priority
    ;writers.stream.filters.priority.priority = 4
 ```
+##### Canvas Kaltura Plugin Settings:
+```
+   Domain: media.arrivuapps.com
+   Resource Domain: media.arrivuapps.com
+   RTMP Domain: media.arrivuapps.com
+   Player UI Conf ID: 11170224
+   KCW UI Conf ID: 11170221
+   Uploader UI Conf ID: 1103
+```
