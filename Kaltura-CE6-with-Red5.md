@@ -68,3 +68,8 @@
    php package.php /tmp/kalturaCEinstaller false CE v6.2.0 dev
    rsync -av ~/ce-packager/git-repositories/ce-configurations/auto_install/ /tmp/kalturaCEinstaller
 ```
+#####Run the Auto Install script
+```
+   cd /tmp/kalturaCEinstaller/
+   ./main.sh
+```
