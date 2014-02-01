@@ -7,13 +7,13 @@
 ```
 ##### Add at the bottom:
 ``` 
-    127.0.0.1 media.arrivuapps.com
+   127.0.0.1 media.arrivuapps.com
 ```
 ```
-    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-    yum install ntp* -y
-    ntpdate 0.us.pool.ntp.org 
-    vim /etc/ntp.conf 
+   ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+   yum install ntp* -y
+   ntpdate 0.us.pool.ntp.org 
+   vim /etc/ntp.conf 
 ```
 ##### Around line 21 add the following lines:
 ```
