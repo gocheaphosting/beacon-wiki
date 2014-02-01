@@ -7,6 +7,5 @@
     127.0.0.1 media.arrivuapps.com
     ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
     yum install ntp* -y
-    
-    
+    ntpdate 0.us.pool.ntp.org    
 ````
