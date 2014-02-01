@@ -1,5 +1,6 @@
 `
-yum update <br/>
+yum update
+
 init 6
 `
 
