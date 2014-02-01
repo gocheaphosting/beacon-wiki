@@ -92,3 +92,4 @@
    ln -s /opt/kaltura/contnet/webcam /opt/kaltura/bin/red5/webapps/oflaDemo/streams
    ln -s /opt/kaltura/contnet /opt/kaltura/bin/red5/webapps/oflaDemo/streams
 ```
+##### Go to CE admin console, and then to the configure tab on the partner that you want to use on your canvas and enable the PS2 permissions.
