@@ -1,5 +1,5 @@
 #### Installation Guide (simply follow line by line):
-``` 
+``` console 
     yum update
     init 6
     yum install git wget dos2unix php-cli
@@ -117,4 +117,3 @@
 ##### 
 
 [Reference: https://github.com/kaltura/ce-packager/issues/35](https://github.com/kaltura/ce-packager/issues/35)
-
