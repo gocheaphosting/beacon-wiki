@@ -54,9 +54,9 @@
 ```
 ##### Edit the following settings:
 
-Set TIME_ZONE to your Time Zone - http://www.php.net/manual/en/timezones.php
-Set KALTURA_FULL_VIRTUAL_HOST_NAME to your FQDNS (e.g. kaltura.mydomain.com without protocol. FQDNS: http://www.linfo.org/fqdn.html)
-Set NFS_SERVER, DWH_HOST, RED5_HOST and SPHINX_DB_HOST to 127.0.0.1
+* Set TIME_ZONE to your Time Zone - http://www.php.net/manual/en/timezones.php
+* Set KALTURA_FULL_VIRTUAL_HOST_NAME to your FQDNS (e.g. kaltura.mydomain.com without protocol. FQDNS: http://www.linfo.org/fqdn.html)
+* Set NFS_SERVER, DWH_HOST, RED5_HOST and SPHINX_DB_HOST to 127.0.0.1
 Set ADMIN_CONSOLE_ADMIN_MAIL and TEST_PARTNER_EMAIL to your email
 Set DB1_USER to root
 Set DB1_PASS to your desired root MySQL password (the install will auto-generate pass for the kaltura user)
