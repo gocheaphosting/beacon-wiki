@@ -6,7 +6,7 @@
     vim /etc/hosts 
 ```
 ##### Add at the bottom:
-```
+```bash
     127.0.0.1 media.arrivuapps.com
 ```
 ```
