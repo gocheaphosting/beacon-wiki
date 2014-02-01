@@ -61,7 +61,7 @@
 * Set DB1_USER to root
 * Set DB1_PASS to your desired root MySQL password (the install will auto-generate pass for the kaltura user)
 * Make sure that at the bottom: WORK_MODE=http (or https if you have valid SSL certificate installed)
-#####Run the Kaltura install packager script
+##### Run the Kaltura install packager script
 ```
    cd ~/ce-packager/packaging/
    php package.php /tmp/kalturaCEinstaller false CE v6.2.0 dev
