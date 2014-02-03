@@ -38,7 +38,13 @@
    sudo yum install postfix
    vim /etc/postfix/main.cf   
 ```
-* change myhostname = host.domain.tld to media.arrivuapps.com
+* line no 75 change myhostname = host.domain.tld to media.arrivuapps.com
+* line no 98 uncomment #myorigin = $myhostname
+* line no 113 uncomment #inet_interfaces = all
+* line no 116 comment inet_interfaces = localhost
+* line no 264 uncomment #mynetworks = 168.100.189.0/28, 127.0.0.0/8
+* line no 426 uncomment #mail_spool_directory = /var/spool/mail 
+
 ##### Clone the ce-packager repository and fix the git submodules to checkout the known latest working branches:
 ```
    cd ~/   
