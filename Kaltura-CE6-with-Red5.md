@@ -36,7 +36,9 @@
 #####Install Postfix
 ```
    sudo yum install postfix
+   vim /etc/postfix/main.cf   
 ```
+* change myhostname = host.domain.tld to media.arrivuapps.com
 ##### Clone the ce-packager repository and fix the git submodules to checkout the known latest working branches:
 ```
    cd ~/   
