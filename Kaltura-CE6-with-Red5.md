@@ -12,7 +12,7 @@
 ```
 ##### Add at the bottom:
 ``` 
-   127.0.0.1 media.arrivuapps.com
+   162.243.49.231 media.arrivuapps.com
 ```
 ```
    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
