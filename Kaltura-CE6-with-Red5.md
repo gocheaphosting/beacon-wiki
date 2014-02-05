@@ -1,5 +1,5 @@
 #### Installation Guide (simply follow line by line):
-```ruby 
+``` 
    yum update
    init 6
    wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
