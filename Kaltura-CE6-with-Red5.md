@@ -7,6 +7,7 @@
    rpm -ivh epel-release-6-8.noarch.rpm
    yum install byobu -y
    yum install git wget dos2unix php-cli
+   yum install vim
    vim /etc/hosts 
 ```
 ##### Add at the bottom:
