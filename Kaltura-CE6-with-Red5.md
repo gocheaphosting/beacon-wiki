@@ -13,6 +13,8 @@
 ##### Add at the bottom:
 ``` 
    162.243.49.231 media.arrivuapps.com
+   vim /etc/sysconfig/network
+   HOSTNAME=media.arrivuapps.com
 ```
 ```
    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
