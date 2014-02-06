@@ -2,14 +2,17 @@
 ``` 
    yum update
    vim /etc/sysconfig/network
+```
+##### Add at the bottom:
+```
    HOSTNAME=media.arrivuapps.com
+```
+```
    init 6
-   yum install vim -y
    yum install wget -y
    wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
    rpm -ivh epel-release-6-8.noarch.rpm
-   yum install byobu -y
-   yum install git wget dos2unix php-cli
+   yum install byobu git wget dos2unix php-cli vim -y
 ```
 ##### Add at the bottom:
 ``` 
