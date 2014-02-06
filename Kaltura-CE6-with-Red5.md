@@ -43,6 +43,10 @@
    service ntpd start
    chkconfig ntpd on
 ```
+#####Install JAVA
+```
+   yum -y install java-1.6.0-openjdk java-1.6.0-openjdk-devel
+```
 #####Install Postfix
 ```
    sudo yum install postfix
@@ -110,7 +114,6 @@
 ```
 * Replace 'rtmp://yoursite.com/oflaDemo' with 'rtmp://media.arrivuapps.com/oflaDemo
 ```
-   yum -y install java-1.6.0-openjdk java-1.6.0-openjdk-devel
    ln -s /opt/kaltura/contnet/webcam /opt/kaltura/bin/red5/webapps/oflaDemo/streams
    ln -s /opt/kaltura/contnet /opt/kaltura/bin/red5/webapps/oflaDemo/streams
 ```
