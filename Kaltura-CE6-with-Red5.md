@@ -8,10 +8,10 @@
    rpm -ivh epel-release-6-8.noarch.rpm
    yum install byobu -y
    yum install git wget dos2unix php-cli
-   vim /etc/hosts 
 ```
 ##### Add at the bottom:
 ``` 
+   vim /etc/hosts 
    162.243.49.231 media.arrivuapps.com
    vim /etc/sysconfig/network
    HOSTNAME=media.arrivuapps.com
