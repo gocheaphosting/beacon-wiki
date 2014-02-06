@@ -3,7 +3,7 @@
    yum update
    vim /etc/sysconfig/network
 ```
-##### Add at the bottom:
+##### change HOSTNAME:
 ```
    HOSTNAME=media.arrivuapps.com
 ```
