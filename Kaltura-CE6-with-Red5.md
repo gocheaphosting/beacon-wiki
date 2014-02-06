@@ -1,6 +1,8 @@
 #### Installation Guide (simply follow line by line):
 ``` 
    yum update
+   vim /etc/sysconfig/network
+   HOSTNAME=media.arrivuapps.com
    init 6
    yum install vim -y
    yum install wget -y
@@ -13,8 +15,6 @@
 ``` 
    vim /etc/hosts 
    162.243.49.231 media.arrivuapps.com
-   vim /etc/sysconfig/network
-   HOSTNAME=media.arrivuapps.com
 ```
 ```
    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
