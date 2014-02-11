@@ -1,3 +1,10 @@
+```
+# sudo gem install backup
+
+# backup generate:config   # Generates the main Backup configuration file
+
+# backup perform --trigger canvas_file_store_backups
+```
 
 #  Installation :-
 
@@ -377,6 +384,5 @@ $ backup decrypt --encryptor openssl --base64 --salt --in
 
 
 If crontab executed not automatically give the full path of backup gem
-
 
 
