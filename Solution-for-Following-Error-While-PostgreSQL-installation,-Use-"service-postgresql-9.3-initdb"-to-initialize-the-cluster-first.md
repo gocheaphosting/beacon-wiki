@@ -1,4 +1,3 @@
-
 After Installing Postgresql we need to initialize for first Use.
 If not we will get the following error
 
