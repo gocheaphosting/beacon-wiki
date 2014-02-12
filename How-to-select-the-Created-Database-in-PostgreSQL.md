@@ -34,4 +34,14 @@ You are now connected to database "linuxdatabase" as user "postgres".
 linuxdatabase=#
 ```
 
+To Select a Database from terminal Without login to postgres user
+
+```
+[root@psql ~]# psql -h localhost -p 5432 -U postgres linuxdatabase
+psql (9.3.2)
+Type "help" for help.
+
+linuxdatabase=#
+```
+
 That's it
