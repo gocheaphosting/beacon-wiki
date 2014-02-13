@@ -96,5 +96,5 @@ PermitRootLogin no
 Then Restart the ssh service using 
 
 ```
-sudo /etc/init.d/ssh restart
+# sudo /etc/init.d/ssh restart
 ```
