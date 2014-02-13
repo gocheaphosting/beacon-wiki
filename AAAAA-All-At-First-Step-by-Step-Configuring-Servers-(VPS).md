@@ -7,7 +7,7 @@ First Create a user sysadmin
 Create a password for sysadmin
 
 ```
-passwd sysadmin
+# passwd sysadmin
 ```
 Add the Created Sysadmin user to Sudo Group to get root privileges
 
