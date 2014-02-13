@@ -4,10 +4,15 @@ First Create a user sysadmin
 # useradd -m -s /bin/bash sysadmin
 ```
 
-Add the Created Sysadmin user to Sudo Group to get root privilages
+Create a password for sysadmin
 
 ```
-# sudo usermod -a -G sudo user
+passwd sysadmin
+```
+Add the Created Sysadmin user to Sudo Group to get root privileges
+
+```
+# sudo usermod -a -G sudo sysadmin
 ```
 
 Change the Port number for ssh
