@@ -1,6 +1,17 @@
 This will do incremental backup for user sukumar to samba Drive /sukumar/rsync
 His files in Home Directory,Desktop , Pictures, music will be synced using incremental to samba.
 
+Create a Password less Authentication Using 
+
+```
+ssh-keygen 
+```
+Copy the ID using 
+
+```
+ssh-copy-id sysadmin@192.168.0.15
+```
+
 Create a Script 
 
 ```
