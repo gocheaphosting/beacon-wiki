@@ -24,6 +24,12 @@ Then Restart the Network using
 # sudo /etc/init.d/networking restart
 ```
 
+Or there is a Alternative way 
+
+```
+# sudo dpkg-reconfigure resolvconf
+```
+
 This will be solution for the Above error
 
 That's it ...
