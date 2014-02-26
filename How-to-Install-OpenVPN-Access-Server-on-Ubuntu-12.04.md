@@ -1,17 +1,15 @@
-
 IP Address Im Using : 192.168.0.10
 
 Operating System I'm using
 
 ```
 # lsb_release -a
-```
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 12.04 LTS
 Release:	12.04
 Codename:	precise
-
+```
 Step 1:
 
 Download the .deb package for Installation 
