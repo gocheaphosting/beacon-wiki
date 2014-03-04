@@ -62,7 +62,7 @@ set mailserver smtp.gmail.com port 587
 
    > Add services in /etc/monit/monitrc
 
-
+```
 # Host Load Average, CPU, Memory
 #
   check system www.jigsawacademy.net
@@ -131,3 +131,5 @@ check process fail2ban with pidfile /var/run/fail2ban/fail2ban.pid
 	if inode usage > 90% then alert
 	if inode usage > 99% then stop
 	alert alertforarrivusystems@gmail.com
+
+```
