@@ -265,6 +265,6 @@ RTMP stream URL prefix:   /kaltura
 This will make works both RTMP & RTMPE Video Streaming Happy Streaming.
 
 
-Bunch of thanks to @jessup from Kaltura team for guiding me. 
+Bunch of thanks to jessp01 from Kaltura team for guiding me. 
 
 
