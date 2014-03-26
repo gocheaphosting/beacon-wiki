@@ -72,13 +72,13 @@ copytruncate
 
 ### Understanding the Options
 
-daily – Rotate the log files each day. You can also use weekly or monthly here instead.
-missingok – If the log file doesn’t exist, ignore it
-rotate 7 – Only keep 7 days of logs around
-compress – GZip the log file on rotation
-delaycompress – Rotate the file one day, then compress it the next day so we can be sure that it won’t interfere with the Rails server
-notifempty – Don’t rotate the file if the logs are empty
-copytruncate – Copy the log file and then empties it. This makes sure that the log file Rails is writing to always exists so you won’t get problems because the file does not actually change. If you don’t use this, you would need to restart your Rails application each time.
+* daily – Rotate the log files each day. You can also use weekly or monthly here instead.
+* missingok – If the log file doesn’t exist, ignore it
+* rotate 7 – Only keep 7 days of logs around
+* compress – GZip the log file on rotation
+* delaycompress – Rotate the file one day, then compress it the next day so we can be sure that it won’t interfere with the Rails server
+* notifempty – Don’t rotate the file if the logs are empty
+* copytruncate – Copy the log file and then empties it. This makes sure that the log file Rails is writing to always exists so you won’t get problems because the file does not actually change. If you don’t use this, you would need to restart your Rails application each time.
 
 ### To manually run logrotate :
 
