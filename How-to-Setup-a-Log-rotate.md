@@ -1,8 +1,8 @@
-## Log Rotation
+### Log Rotation
 
 Log rotation is an automated process used in system administration in which dated log files are archived. In general, it is used on servers. Servers which run large applications, such as LAMP stacks, often log every request, and as such, the process of log rotation may be beneficial.
 
-## Files and Directories used by Logrotate
+### Files and Directories used by Logrotate
 
 Configuration file will be Under
 
@@ -16,7 +16,7 @@ Information about last log rotate
 /var/lib/logrotate.status    or    /var/lib/logrotate/status
 ```
 
-## The directory thats usually used by logrotate is
+### The directory thats usually used by logrotate is
 
 ```
 /etc/logrotate.d
@@ -28,7 +28,7 @@ Add the following line in /etc/logrotate.conf
 include /etc/logrotate.d
 ```
 
-# Log rotating nginx
+### Log rotating nginx
 Nginx Log-rotate Configuration 
 
 ```
@@ -56,7 +56,7 @@ postrotate
 endscript
 }
 ```
-### Sample Rails log rotate
+### Rails log rotate
 
 ```
 /var/capistrano/deploy/sublime_hiring/current/log/*.log {
