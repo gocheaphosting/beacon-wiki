@@ -47,31 +47,31 @@ Step 3 :  Install latest version of Oracle JRE/JDK
 
 #sudo mkdir -p /usr/lib/jvm
 
-#sudo mv jdk-7u21-linux-i586.tar.gz /usr/lib/jvm
+#sudo mv jdk-8-linux-x64.tar.gz /usr/lib/jvm
 
 #cd /usr/lib/jvm
 
-#sudo tar zxvf jdk-7u21-linux-i586.tar.gz
+#sudo tar zxvf jdk-8-linux-x64.tar.gz
 
-#sudo rm jdk-7u21-linux-i586.tar.gz
+#sudo rm jdk-8-linux-x64.tar.gz
 
 #ls -l
 
-#jdk1.7.0_21
+#jdk1.8.0
 
-#sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7 .0_21/bin/javac" 1
+#sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0/bin/javac" 1
 
-#sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0 _21/bin/java" 1
+#sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0/bin/java" 1
 
-#sudo update-alternatives --set "javac" "/usr/lib/jvm/jdk1.7.0_21/bin/javac"
+#sudo update-alternatives --set "javac" "/usr/lib/jvm/jdk1.8.0/bin/javac"
 
-#sudo update-alternatives --set "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java"
+#sudo update-alternatives --set "java" "/usr/lib/jvm/jdk1.8.0/bin/java"
 
 #sudo vi /etc/profile
 
 Add the following entries to the bottom of your /etc/profile file:
 
-#JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21 PATH=$PATH:$JAVA_HOME/bin export JAVA_HOME export PATH
+#JAVA_HOME=/usr/lib/jvm/jdk1.8.0 PATH=$PATH:$JAVA_HOME/bin export JAVA_HOME export PATH
 
 #. /etc/profile
 
@@ -685,7 +685,6 @@ Here u see the Spark Launched and Entier ur detailes as username , Password and 
 
 
 ![31](https://github.com/babinlonston/Ubuntu-Linux-Stuffs/raw/master/openfire%20chat%20setup%20in%20Ubuntu%2012.04%20Server/Selection_031.png)
-
 
 
 
