@@ -101,7 +101,7 @@ http {
 
 ```
    sysadmin@appserver:/var/canvas$ cd /opt/nginx/include.d
-   sysadmin@appserver:/var/canvas$ vi passenger.conf    
+   sysadmin@appserver:/opt/nginx/include.d$ vi passenger.conf    
 ```
 
 - Add the following passenger config entries to the passenger.conf
