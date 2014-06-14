@@ -138,3 +138,7 @@
 ##### 
 
 [Reference: https://github.com/kaltura/ce-packager/issues/35](https://github.com/kaltura/ce-packager/issues/35)
+
+
+In player->Features->Additional Parameter and Plugins
+Add kalturaLogo.visible=false
