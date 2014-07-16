@@ -94,10 +94,11 @@ wheneverize
 Add the content to get effect 
 
 ```
-every :hour do
-
-  command "backup perform -t production_database_name_here"
-end
+every 1.day, :at => '4:30 am' do
+   command "/usr/local/bin/backup perform -t user_file_store --config-file /home/user/Backup/config.rb"
+   command "/usr/local/bin/backup perform -t user_production_db --config-file /home/user/Backup/config.rb"
+   command "/usr/local/bin/backup perform -t user_queue_production_db --config-file /home/user/Backup/config.rb"
+ end
 ```
 
 Add the Schedule to crontab using
