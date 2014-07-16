@@ -61,6 +61,7 @@ backup check
 ```
 
 To Manually take backup
+
 Note : Run this command while inside Backup folder if not it won't run
 
 ```
