@@ -61,7 +61,7 @@ backup check
 ```
 
 To Manually take backup
-
+Note : Run this command while inside Backup folder if not it won't run
 
 ```
 backup perform -t production_database_name_here
@@ -86,6 +86,7 @@ first we need to create a directory named Backup
 
 Then Run the command wheneverize to get create the schedule.rb file under /home/sysadmin/Backup/config
 
+Note : Run this command while inside Backup folder if not it won't run
 
 ```
 wheneverize
@@ -103,6 +104,7 @@ every 1.day, :at => '4:30 am' do
 
 Add the Schedule to crontab using
 
+Note : Run this command while inside Backup folder if not it won't run
 
 ```
 whenever -w ~/Backup/config/schedule.rb
