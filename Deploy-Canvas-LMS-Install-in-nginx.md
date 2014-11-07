@@ -1,12 +1,10 @@
 ##Installing Ruby-Brightbox
 first remove all older version of ruby if installed mistakenly
 
-
-sudo apt-get remove ruby1.9.3
-sudo apt-get purge ruby1.9.3
-sudo apt-get remove ruby1.9.1
-sudo apt-get purge ruby1.9.1
-
+    sudo apt-get remove ruby1.9.3
+    sudo apt-get purge ruby1.9.3
+    sudo apt-get remove ruby1.9.1
+    sudo apt-get purge ruby1.9.1
 
 for installing ruby brightbox create a repository using following command
 
@@ -18,10 +16,8 @@ sudo apt-get install ruby1.9.3
 
 then make sure that installed ruby version is brightbox by the command
 
-
-ruby -v
-ruby 1.9.3p550 (2014-10-27) [x86_64-linux] Brightbox
-
+    ruby -v
+    ruby 1.9.3p550 (2014-10-27) [x86_64-linux] Brightbox
 
 ## Installing Postgres
 Follow [Postgresql install ](https://github.com/m-narayan/beacon/wiki/Install-Postgresql) install to make sure that the database is ready
