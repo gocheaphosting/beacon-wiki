@@ -1,25 +1,38 @@
-## Install Passenger via gem
 
 Note : - ** We need to install passenger 4.0 and currently it is a release candidate 6. **
-
-To install the pre-release passenger, run the command 
-
-```
-gem install passenger
-```
 ## install Nginx to work with Passenger
 
  Since we’ll be using Nginx for serving our application, we’re going to install it using the Passenger installer. Nginx modules need to be compiled into nginx, unlike Apache, so we can’t just install the package from the Ubuntu Package management using apt-get.
+Adding our APT repository
 
-- Run the command 
+1.Install our PGP key. Packages are signed by "Phusion Automated Software Signing (auto-software-signing@phusion.nl)", fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.
+ 
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 
-```
-passenger-install-nginx-module
-```
+2.Add HTTPS support for APT. Our APT repository is stored on an HTTPS server.
 
-- Choose "download, compile, and install Nginx for me"
-- Accept defaults for any other questions it asks
+    sudo apt-get install apt-transport-https ca-certificates
 
+3.Create a file /etc/apt/sources.list.d/passenger.list and insert one of the following lines, depending on your distribution.
+Open source
+
+##### !!!! Only add ONE of these lines, not all of them based on  your ubuntu version  !!!! #####
+    # Ubuntu 14.04
+    deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
+    # Ubuntu 12.04
+    deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main
+    # Ubuntu 10.04
+    deb https://oss-binaries.phusionpassenger.com/apt/passenger lucid main
+    # Debian 7
+    deb https://oss-binaries.phusionpassenger.com/apt/passenger wheezy main
+    # Debian 6
+    deb https://oss-binaries.phusionpassenger.com/apt/passenger squeeze main
+
+Secure passenger.list and update your APT cache:
+
+    sudo chown root: /etc/apt/sources.list.d/passenger.list
+    sudo chmod 600 /etc/apt/sources.list.d/passenger.list
+    sudo apt-get update
 
 ## setup a script to control Nginx from Linux service
 
