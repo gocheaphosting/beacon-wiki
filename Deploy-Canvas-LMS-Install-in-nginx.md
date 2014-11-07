@@ -1,8 +1,8 @@
 ##Installing Ruby-Brightbox
   first remove all older version of ruby if installed mistakenly
+
   sudo apt-get remove ruby1.9.3
   sudo apt-get purge ruby1.9.3
-
   sudo apt-get remove ruby1.9.1
   sudo apt-get purge ruby1.9.1
 
