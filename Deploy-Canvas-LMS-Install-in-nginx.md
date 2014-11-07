@@ -8,10 +8,9 @@ first remove all older version of ruby if installed mistakenly
 
 for installing ruby brightbox create a repository using following command
 
-
-sudo apt-add-repository ppa:brightbox/ruby-ng-experimental
-sudo apt-get update
-sudo apt-get install ruby1.9.3
+    sudo apt-add-repository ppa:brightbox/ruby-ng-experimental
+    sudo apt-get update
+    sudo apt-get install ruby1.9.3
 
 
 then make sure that installed ruby version is brightbox by the command
