@@ -2,7 +2,7 @@
 
 run the following commands from a Terminal or command line. We recommend to also install the capistrano-ext gem that contains an extra set of tools to make the deployments even easier:
 ```
-gem install capistrano
+gem install capistrano --version=2.15.5
 gem install capistrano-ext
 ```
 
