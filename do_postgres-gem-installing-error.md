@@ -8,6 +8,7 @@ First step check install postgres
 Postgres Installed in your System and next step given below 
 
 2.sudo apt-get install postgresql-server-dev-9.3 libpq-dev
+
 and again bundle install
 
 Postgres not installed in your system given below use the next step 
