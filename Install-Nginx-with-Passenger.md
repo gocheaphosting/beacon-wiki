@@ -45,6 +45,11 @@ sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 ```
 
+```
+sudo apt-get install nginx-extras passenger
+
+```
+
 ** now We can control Nginx with this script. To start and stop the server manually, run: **
 ```
 sudo /etc/init.d/nginx stop
